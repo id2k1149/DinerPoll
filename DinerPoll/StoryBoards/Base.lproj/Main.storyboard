@@ -42,6 +42,9 @@
                                 <state key="normal" title="LogIn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="rog-Di-7IG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -55,15 +58,54 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="BeO-WI-AAT" id="Erh-mz-4st"/>
+                        <outlet property="loginButton" destination="BeO-WI-AAT" id="cXL-jQ-Egb"/>
+                        <outlet property="passwordTF" destination="dTq-n1-rXT" id="N8B-ox-H6o"/>
+                        <outlet property="userNameTF" destination="vnf-Av-mrS" id="DBe-aP-jQo"/>
+                        <segue destination="jsZ-cm-OM8" kind="show" identifier="openPollVC" id="E7J-CD-kbF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="-27"/>
+            <point key="canvasLocation" x="105" y="-27"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6a2-Od-QTk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="jsZ-cm-OM8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="whx-yh-07c"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tkc-6a-LgB">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5Dz-M0-f0D" kind="relationship" relationship="viewControllers" id="K2l-Xy-ih9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J8Z-S5-huQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918.75" y="-27.464788732394368"/>
+        </scene>
+        <!--Poll View Controller-->
+        <scene sceneID="8rA-7r-n3k">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="5Dz-M0-f0D" userLabel="Poll View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VE1-Sp-nKR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TJ7-Bp-6Dx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
+                    <navigationItem key="navigationItem" id="Xpn-P7-t2g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="-27"/>
         </scene>
     </scenes>
     <resources>
+        <image name="questionmark.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

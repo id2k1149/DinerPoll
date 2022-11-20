@@ -13,6 +13,12 @@
 		50D792872926A91C00ED9045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D792852926A91C00ED9045 /* Main.storyboard */; };
 		50D792892926A91D00ED9045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D792882926A91D00ED9045 /* Assets.xcassets */; };
 		50D7928C2926A91D00ED9045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D7928A2926A91D00ED9045 /* LaunchScreen.storyboard */; };
+		50EE1BDC292A82A0004F0906 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BDB292A82A0004F0906 /* DataSource.swift */; };
+		50EE1BDE292A8396004F0906 /* Diner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BDD292A8396004F0906 /* Diner.swift */; };
+		50EE1BE0292A84A6004F0906 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BDF292A84A6004F0906 /* MenuItem.swift */; };
+		50EE1BE2292A8571004F0906 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BE1292A8571004F0906 /* Dish.swift */; };
+		50EE1BE4292A98A1004F0906 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BE3292A98A1004F0906 /* Menu.swift */; };
+		50EE1BE6292AA96E004F0906 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BE5292AA96D004F0906 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		50D792882926A91D00ED9045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50D7928B2926A91D00ED9045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50D7928D2926A91D00ED9045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50EE1BDB292A82A0004F0906 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		50EE1BDD292A8396004F0906 /* Diner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diner.swift; sourceTree = "<group>"; };
+		50EE1BDF292A84A6004F0906 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		50EE1BE1292A8571004F0906 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		50EE1BE3292A98A1004F0906 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		50EE1BE5292AA96D004F0906 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 				50D792962926A97C00ED9045 /* Models */,
 				50D792942926A94300ED9045 /* ViewControllers */,
 				50D792952926A95B00ED9045 /* StoryBoards */,
+				50EE1BDA292A8272004F0906 /* Services */,
 				50D792932926A93500ED9045 /* Delegates */,
 				50D792882926A91D00ED9045 /* Assets.xcassets */,
 				50D7928D2926A91D00ED9045 /* Info.plist */,
@@ -95,8 +108,21 @@
 		50D792962926A97C00ED9045 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				50EE1BDD292A8396004F0906 /* Diner.swift */,
+				50EE1BDF292A84A6004F0906 /* MenuItem.swift */,
+				50EE1BE1292A8571004F0906 /* Dish.swift */,
+				50EE1BE3292A98A1004F0906 /* Menu.swift */,
+				50EE1BE5292AA96D004F0906 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		50EE1BDA292A8272004F0906 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				50EE1BDB292A82A0004F0906 /* DataSource.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EE1BE0292A84A6004F0906 /* MenuItem.swift in Sources */,
+				50EE1BDE292A8396004F0906 /* Diner.swift in Sources */,
+				50EE1BE4292A98A1004F0906 /* Menu.swift in Sources */,
+				50EE1BE2292A8571004F0906 /* Dish.swift in Sources */,
 				50D792842926A91C00ED9045 /* LoginViewController.swift in Sources */,
+				50EE1BE6292AA96E004F0906 /* User.swift in Sources */,
 				50D792802926A91C00ED9045 /* AppDelegate.swift in Sources */,
+				50EE1BDC292A82A0004F0906 /* DataSource.swift in Sources */,
 				50D792822926A91C00ED9045 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
