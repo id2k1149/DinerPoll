@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
         
         loginButton.layer.cornerRadius = 10
         
-        
     }
     
     //MARK: override functions
@@ -37,37 +36,39 @@ class LoginViewController: UIViewController {
 //
 //
 //    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 
 
     @IBAction func loginButtonTapped() {
+        
         for user in users {
+            
             if user.name == userNameTF.text {
                 appUser = user
-                print(appUser.name, appUser.password)
+                guard userNameTF.text == appUser.name, passwordTF.text == appUser.password else {
+                    showAlert(
+                        title: "Invalid login or password",
+                        message: "Please, enter correct login and password",
+                        textField: passwordTF
+                    )
+                    return
+                }
+                performSegue(withIdentifier: "openPollVC", sender: nil)
+            } else {
+                showAlert(
+                    title: "Invalid login or password",
+                    message: "Please, enter correct login and password",
+                    textField: passwordTF
+                )
+                return
             }
+            
         }
-        guard userNameTF.text == appUser.name, passwordTF.text == appUser.password else {
-            showAlert(
-                title: "Invalid login or password",
-                message: "Please, enter correct login and password",
-                textField: passwordTF
-            )
-            return
-        }
-        performSegue(withIdentifier: "openPollVC", sender: nil)
-   
     }
-    
-//    func checkCredentials(login: String, password: String) -> Bool {
-//        for user in users {
-//            if user.name == login {
-//                if user.password == password {
-//                    return true
-//                }
-//            }
-//        }
-//        return false
-//    }
 }
 
 // MARK: UIAlertController
