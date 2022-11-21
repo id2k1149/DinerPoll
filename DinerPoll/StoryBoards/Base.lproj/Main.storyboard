@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1005" y="-27"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="8nQ-G4-zDt">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="dp4-Ex-Dy9" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="dp4-Ex-Dy9" customClass="TabBarViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="NCk-s8-0za">
                         <barButtonItem key="rightBarButtonItem" title="logout" id="eA3-Rj-fA7">
@@ -99,6 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CMs-aK-wZr">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -132,7 +133,7 @@
         <!--Diners View Controller-->
         <scene sceneID="oDg-iP-cu3">
             <objects>
-                <tableViewController storyboardIdentifier="dinersList" modalPresentationStyle="fullScreen" id="Wuz-b7-liQ" userLabel="Diners View Controller" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="Wuz-b7-liQ" userLabel="Diners View Controller" customClass="DinersTableViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rbg-V7-xAe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

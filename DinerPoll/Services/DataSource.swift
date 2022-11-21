@@ -9,63 +9,40 @@ class DataStore {
     static let shared = DataStore()
     
     var users: [User] {
-        getUsers(total: Int.random(in: 3...5))
-    }
-    
-    var dishes: [Dish] {
-        getDishes()
-    }
-    
-    var diners: [Diner] {
-        getDiners()
-    }
-    
-    private init() {}
-}
-
-extension DataStore {
-    
-    func getUsers(total max: Int) -> [User] {
         var users = [User]()
+        let randomMax = Int.random(in: 3...5)
         
-        for index in 1...max {
+        for index in 1...randomMax {
             users.append(User(name: "User\(index)", password: "pass"))
         }
-        
         return users
     }
     
-    func getDishes() -> [Dish] {
-        var dishes = [Dish]()
-        let max = Int.random(in: 3...5)
-        
-        for index in 1...max {
-            dishes.append(Dish(dishName: "Dish #\(index)"))
-        }
-        
-        return dishes
-    }
-    
-    func getDiners() -> [Diner] {
+    var diners: [Diner] {
         var diners = [Diner]()
+        var randomNumbers = Array(1...100).shuffled()
         
-        for index in 1...3 {
-            diners.append(Diner(title: "Diner #\(index)", menu: getMenu()))
+        for _ in 1...10 {
+            
+            let dinerName = "Diner #\(randomNumbers[0])"
+            randomNumbers.removeFirst()
+            
+            var dishList = [(String, String)]()
+            let menuLength = Int.random(in: 2...5)
+            
+            for _ in 1...menuLength {
+                let dishName = "Dish_\(randomNumbers[0])"
+                randomNumbers.removeFirst()
+                let dishPrice = "$\(Int.random(in: 1...20)).00"
+                let menuItem = (dishName, dishPrice)
+                dishList.append(menuItem)
+            }
+            
+            let diner = Diner(name: dinerName, menu: dishList)
+            diners.append(diner)
         }
-        
         return diners
     }
     
-    func getMenu() -> Menu {
-        Menu(dishList: getMenuItems())
-    }
-    
-    func getMenuItems() -> [MenuItem] {
-        var list = [MenuItem]()
-        
-        return list
-    }
-    
-    
-    
+    private init() {}
 }

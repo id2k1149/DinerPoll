@@ -6,11 +6,19 @@
 //
 
 final class Diner {
-    let title: String
-    let menu: Menu
+    let name: String
+    let menu: [(String, String)]
     
-    init(title: String, menu: Menu) {
-        self.title = title
+    init(name: String, menu: [(String, String)]) {
+        self.name = name
         self.menu = menu
     }
+}
+
+extension Diner {
+    
+    static func getDiners() -> [Diner] {
+        DataStore.shared.diners
+    }
+    
 }

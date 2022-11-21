@@ -14,8 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     
     private let users = User.getUsers()
-//    private var appUser: User!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
