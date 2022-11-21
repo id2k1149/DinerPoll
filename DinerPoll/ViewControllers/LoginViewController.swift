@@ -30,7 +30,6 @@ class LoginViewController: UIViewController {
         
         for viewController in viewControllers {
             if let dinersVC = viewController as? DinersTableViewController {
-                dinersVC.view.backgroundColor = .systemOrange
                 dinersVC.diners = diners
             }
         }
@@ -40,7 +39,6 @@ class LoginViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-
 
     @IBAction func loginButtonTapped() {
         

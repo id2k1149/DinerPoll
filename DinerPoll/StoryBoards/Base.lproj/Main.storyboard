@@ -68,12 +68,12 @@
             </objects>
             <point key="canvasLocation" x="105" y="-27"/>
         </scene>
-        <!--Diners-->
+        <!--Navigation Controller-->
         <scene sceneID="eKA-2H-0KX">
             <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="t8P-TN-KRX" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="t8P-TN-KRX" userLabel="Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diners" id="nsk-Oe-rNY"/>
-                    <navigationItem key="navigationItem" id="Bb0-ep-BRH"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Bb0-ep-BRH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WIn-MQ-zHG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -124,7 +124,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
-                    <navigationItem key="navigationItem" id="Xpn-P7-t2g"/>
+                    <navigationItem key="navigationItem" title="Today Poll" id="Xpn-P7-t2g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +154,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Diners" image="menucard" catalog="system" id="eNb-YT-ayb"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="pdl-TZ-Gbu"/>
+                    <navigationItem key="navigationItem" title="Diners List with Menu" id="pdl-TZ-Gbu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uo-FG-30n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

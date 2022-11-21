@@ -22,13 +22,13 @@ class DataStore {
         var diners = [Diner]()
         var randomNumbers = Array(1...100).shuffled()
         
-        for _ in 1...10 {
+        for _ in 1...9 {
             
             let dinerName = "Diner #\(randomNumbers[0])"
             randomNumbers.removeFirst()
             
             var dishList = [(String, String)]()
-            let menuLength = Int.random(in: 2...5)
+            let menuLength = Int.random(in: 2...4)
             
             for _ in 1...menuLength {
                 let dishName = "Dish_\(randomNumbers[0])"
