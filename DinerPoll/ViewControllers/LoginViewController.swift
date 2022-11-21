@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
         for viewController in viewControllers {
             if let dinersVC = viewController as? DinersTableViewController {
                 dinersVC.diners = diners
+            } else if let pollVC = viewController as? PollViewController {
+                pollVC.view.backgroundColor = .systemOrange
+                pollVC.diners = diners
             }
         }
     }

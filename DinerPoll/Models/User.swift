@@ -16,9 +16,7 @@ class User {
 }
 
 extension User {
-    
     static func getUsers() -> [User] {
         DataStore.shared.users
     }
-    
 }

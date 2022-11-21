@@ -8,10 +8,11 @@
 import UIKit
 
 class PollViewController: UIViewController {
+    
+    var diners: [Diner]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
 }

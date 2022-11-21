@@ -20,12 +20,10 @@ class DinersTableViewController: UITableViewController {
         diners[section].name
     }
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         diners[section].menu.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dinerID", for: indexPath)
 
@@ -41,9 +39,6 @@ class DinersTableViewController: UITableViewController {
 
         cell.contentConfiguration = content
 
-
         return cell
     }
-     
-     
 }

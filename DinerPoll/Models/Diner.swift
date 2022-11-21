@@ -16,9 +16,7 @@ final class Diner {
 }
 
 extension Diner {
-    
     static func getDiners() -> [Diner] {
         DataStore.shared.diners
     }
-    
 }
