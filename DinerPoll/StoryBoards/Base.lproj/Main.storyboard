@@ -90,19 +90,37 @@
         <!--Poll View Controller-->
         <scene sceneID="8rA-7r-n3k">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="5Dz-M0-f0D" userLabel="Poll View Controller" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="5Dz-M0-f0D" userLabel="Poll View Controller" customClass="PollViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VE1-Sp-nKR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkE-UA-Qic">
+                                <rect key="frame" x="256" y="20" width="48" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="Avc-Gz-qev"/>
+                                    <segue destination="uN0-uY-Jgi" kind="unwind" unwindAction="unwindForLogoutFor:" id="CfH-ZT-63a"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TJ7-Bp-6Dx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jkE-UA-Qic" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TJ7-Bp-6Dx" secondAttribute="leading" constant="254" id="FGy-L3-KPx"/>
+                            <constraint firstItem="TJ7-Bp-6Dx" firstAttribute="trailing" secondItem="jkE-UA-Qic" secondAttribute="trailing" constant="16" id="bR7-Ll-e1w"/>
+                            <constraint firstItem="jkE-UA-Qic" firstAttribute="top" secondItem="TJ7-Bp-6Dx" secondAttribute="top" constant="20" id="vpb-Qf-xZ3"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
                     <navigationItem key="navigationItem" id="Xpn-P7-t2g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="uN0-uY-Jgi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="-27"/>
+            <point key="canvasLocation" x="1800" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>

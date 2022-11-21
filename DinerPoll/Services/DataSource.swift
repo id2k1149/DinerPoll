@@ -9,7 +9,7 @@ class DataStore {
     static let shared = DataStore()
     
     var users: [User] {
-        getUsers()
+        getUsers(total: Int.random(in: 3...5))
     }
     
     private init() {}
@@ -28,12 +28,11 @@ extension DataStore {
         return dishes
     }
     
-    func getUsers() -> [User] {
+    func getUsers(total max: Int) -> [User] {
         var users = [User]()
-        let max = Int.random(in: 3...5)
         
         for index in 1...max {
-            users.append(User(name: "User_\(index)", password: "pass"))
+            users.append(User(name: "User\(index)", password: "pass"))
         }
         
         return users

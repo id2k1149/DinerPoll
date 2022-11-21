@@ -14,13 +14,14 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     
     private let users = User.getUsers()
-    private var appUser: User!
+//    private var appUser: User!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 10
+        
         
     }
     
@@ -45,11 +46,10 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginButtonTapped() {
         
-        for user in users {
+        for index in 0..<users.count {
             
-            if user.name == userNameTF.text {
-                appUser = user
-                guard userNameTF.text == appUser.name, passwordTF.text == appUser.password else {
+            if users[index].name == userNameTF.text {
+                guard passwordTF.text == users[index].password else {
                     showAlert(
                         title: "Invalid login or password",
                         message: "Please, enter correct login and password",
@@ -58,16 +58,19 @@ class LoginViewController: UIViewController {
                     return
                 }
                 performSegue(withIdentifier: "openPollVC", sender: nil)
-            } else {
-                showAlert(
-                    title: "Invalid login or password",
-                    message: "Please, enter correct login and password",
-                    textField: passwordTF
-                )
-                return
             }
-            
         }
+        showAlert(
+            title: "Invalid login or password",
+            message: "Please, enter correct login and password",
+            textField: passwordTF
+        )
+        return
+    }
+    
+    @IBAction func unwindForLogout(for segue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        passwordTF.text = ""
     }
 }
 
