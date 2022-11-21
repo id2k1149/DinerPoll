@@ -6,7 +6,7 @@
 //
 
 final class Menu {
-    let dishList: [MenuItem]
+    var dishList: [MenuItem]
     
     init(dishList: [MenuItem]) {
         self.dishList = dishList
