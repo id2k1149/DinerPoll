@@ -43,25 +43,16 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped() {
         
         for index in 0..<users.count {
-            
-            if users[index].name == userNameTF.text {
-                guard passwordTF.text == users[index].password else {
-                    showAlert(
-                        title: "Invalid login or password",
-                        message: "Please, enter correct login and password",
-                        textField: passwordTF
-                    )
-                    return
-                }
+            if users[index].name == userNameTF.text && users[index].password == passwordTF.text {
                 performSegue(withIdentifier: "openPollVC", sender: nil)
             }
         }
+        
         showAlert(
             title: "Invalid login or password",
             message: "Please, enter correct login and password",
             textField: passwordTF
         )
-        return
     }
     
     @IBAction func unwindForLogout(for segue: UIStoryboardSegue) {
