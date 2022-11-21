@@ -9,6 +9,8 @@ import UIKit
 
 class DinersTableViewController: UITableViewController {
     
+    
+    
     var diners: [Diner]!
     
     
@@ -45,5 +47,6 @@ class DinersTableViewController: UITableViewController {
 
         return cell
     }
+     
      
 }

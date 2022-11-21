@@ -14,27 +14,27 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     
     private let users = User.getUsers()
+    let diners = Diner.getDiners()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 10
-        
-        
     }
     
     //MARK: override functions
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        guard let tabBarVC = segue.destination as? UITabBarController
-//        else { return }
-//
-//        guard let viewControllers = tabBarVC.viewControllers
-//        else { return }
-//
-//
-//
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationVC = segue.destination as? UINavigationController else { return }
+        guard let tabBarVC = navigationVC.topViewController as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            if let dinersVC = viewController as? DinersTableViewController {
+                dinersVC.view.backgroundColor = .systemOrange
+                dinersVC.diners = diners
+            }
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

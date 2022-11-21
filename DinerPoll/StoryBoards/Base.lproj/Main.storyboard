@@ -84,7 +84,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gn-Hc-fE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="-27"/>
+            <point key="canvasLocation" x="898" y="-27"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="8nQ-G4-zDt">
@@ -111,7 +111,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbu-Dm-0bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="hbf-J3-hph" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="-27"/>
+            <point key="canvasLocation" x="1727" y="-27"/>
         </scene>
         <!--Poll View Controller-->
         <scene sceneID="8rA-7r-n3k">
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3720" y="-484"/>
+            <point key="canvasLocation" x="2829" y="-496"/>
         </scene>
         <!--Diners View Controller-->
         <scene sceneID="oDg-iP-cu3">
@@ -158,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uo-FG-30n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3720" y="567.25352112676057"/>
+            <point key="canvasLocation" x="2828" y="526"/>
         </scene>
     </scenes>
     <resources>
