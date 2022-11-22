@@ -28,17 +28,17 @@ class LoginViewController: UIViewController {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarVC.viewControllers else { return }
         
-        for viewController in viewControllers {
+        viewControllers.forEach {
             
-            if let dinersNavC = viewController as? DinersNavigationController {
-                guard let dinersVC = dinersNavC.topViewController as? DinersTableViewController else { return }
-                dinersVC.diners = diners
-            } else if let pollNavC = viewController as? PollNavigationController {
-                guard let pollVC = pollNavC.topViewController as? PollViewController else { return }
-                let sortedDiners = Diner.sortDiners(for: diners)
-                let dinersForPoll = Diner.getThreeDinersInTheMiddle(for: sortedDiners)
-                pollVC.currentUser = currentUser
-                pollVC.dinersForPoll = dinersForPoll
+            if let navigationVC = $0 as? UINavigationController {
+                if let dinersVC = navigationVC.topViewController as? DinersTableViewController {
+                    dinersVC.diners = diners
+                } else if let pollVC = navigationVC.topViewController as? PollViewController {
+                    let sortedDiners = Diner.sortDiners(for: diners)
+                    let dinersForPoll = Diner.getThreeDinersInTheMiddle(for: sortedDiners)
+                    pollVC.currentUser = currentUser
+                    pollVC.dinersForPoll = dinersForPoll
+                }
             }
             
         }

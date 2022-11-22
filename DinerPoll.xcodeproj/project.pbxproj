@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		506B92B6292AE85A00FF45DA /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B92B5292AE85A00FF45DA /* PollViewController.swift */; };
 		509E928F292D27420069205F /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E928E292D27420069205F /* Vote.swift */; };
-		509E9291292D3CD70069205F /* PollNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E9290292D3CD70069205F /* PollNavigationController.swift */; };
-		509E9293292D3EC40069205F /* DinersNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E9292292D3EC40069205F /* DinersNavigationController.swift */; };
 		50D49453292BC65E00254AAE /* DinersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D49452292BC65E00254AAE /* DinersTableViewController.swift */; };
 		50D792802926A91C00ED9045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D7927F2926A91C00ED9045 /* AppDelegate.swift */; };
 		50D792822926A91C00ED9045 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D792812926A91C00ED9045 /* SceneDelegate.swift */; };
@@ -28,8 +26,6 @@
 /* Begin PBXFileReference section */
 		506B92B5292AE85A00FF45DA /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		509E928E292D27420069205F /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
-		509E9290292D3CD70069205F /* PollNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollNavigationController.swift; sourceTree = "<group>"; };
-		509E9292292D3EC40069205F /* DinersNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersNavigationController.swift; sourceTree = "<group>"; };
 		50D49452292BC65E00254AAE /* DinersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersTableViewController.swift; sourceTree = "<group>"; };
 		50D7927C2926A91C00ED9045 /* DinerPoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinerPoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D7927F2926A91C00ED9045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,9 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				50D792832926A91C00ED9045 /* LoginViewController.swift */,
-				509E9290292D3CD70069205F /* PollNavigationController.swift */,
 				506B92B5292AE85A00FF45DA /* PollViewController.swift */,
-				509E9292292D3EC40069205F /* DinersNavigationController.swift */,
 				50D49452292BC65E00254AAE /* DinersTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -208,8 +202,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509E9293292D3EC40069205F /* DinersNavigationController.swift in Sources */,
-				509E9291292D3CD70069205F /* PollNavigationController.swift in Sources */,
 				50EE1BDE292A8396004F0906 /* Diner.swift in Sources */,
 				50D792842926A91C00ED9045 /* LoginViewController.swift in Sources */,
 				50EE1BE6292AA96E004F0906 /* User.swift in Sources */,

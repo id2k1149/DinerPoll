@@ -98,7 +98,7 @@
         <!--Poll Nav Controller-->
         <scene sceneID="mVu-cW-4xs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgF-el-maI" userLabel="Poll Nav Controller" customClass="PollNavigationController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgF-el-maI" userLabel="Poll Nav Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7Vd-mv-jfn">
@@ -364,7 +364,7 @@
         <!--Diners Nav Controller-->
         <scene sceneID="NtE-uN-2tQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ps-gL-nXj" userLabel="Diners Nav Controller" customClass="DinersNavigationController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ps-gL-nXj" userLabel="Diners Nav Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diners" image="menucard" catalog="system" id="eNb-YT-ayb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Wj9-e1-vtZ">
