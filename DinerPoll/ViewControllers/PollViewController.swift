@@ -13,6 +13,8 @@ class PollViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let sortedDiners = Diner.sortDiners(for: diners)
+        let dinerForPoll = Diner.getMiddleDiners(for: sortedDiners)
     }
     
 }
