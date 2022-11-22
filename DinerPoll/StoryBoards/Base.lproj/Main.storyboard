@@ -128,60 +128,78 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-7B-B7h">
-                                <rect key="frame" x="16" y="130.5" width="288" height="116"/>
+                                <rect key="frame" x="16" y="130.5" width="288" height="104"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-7Y-fSi">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-7Y-fSi">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttP-SL-3zr">
-                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ttP-SL-3zr" secondAttribute="height" multiplier="1:1" id="vzh-mB-RG4"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="circlebadge" catalog="system"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-Mm-0qC">
-                                                <rect key="frame" x="247.5" y="0.0" width="40.5" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-Mm-0qC">
+                                                <rect key="frame" x="40" y="0.0" width="248" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bGF-li-tce"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="RQL-dZ-4Gb">
-                                        <rect key="frame" x="0.0" y="41" width="288" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6gQ-WQ-He5">
+                                        <rect key="frame" x="0.0" y="37" width="288" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svm-Jb-ZLH">
-                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-RI-UgM">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="4bV-RI-UgM" secondAttribute="height" multiplier="1:1" id="d9z-88-btD"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="circlebadge" catalog="system"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR7-Sa-3gD">
-                                                <rect key="frame" x="247.5" y="0.0" width="40.5" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner #2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6t-F0-jFf">
+                                                <rect key="frame" x="40" y="0.0" width="248" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3Gz-iN-eOm"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="42A-kV-Cpm">
-                                        <rect key="frame" x="0.0" y="82" width="288" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xq7-y2-gCt">
+                                        <rect key="frame" x="0.0" y="74" width="288" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewM-Y4-KW0">
-                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ey-5x-4Ju">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="1Ey-5x-4Ju" secondAttribute="height" multiplier="1:1" id="9se-Xg-IZb"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="circlebadge" catalog="system"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-Me-SJm">
-                                                <rect key="frame" x="247.5" y="0.0" width="40.5" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner #3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alD-t2-Dud">
+                                                <rect key="frame" x="40" y="0.0" width="248" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Zvm-zu-XX0"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-Rx-mCI">
-                                <rect key="frame" x="112.5" y="316.5" width="95" height="34.5"/>
+                                <rect key="frame" x="112.5" y="304.5" width="95" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Vote now"/>
                             </button>
@@ -203,11 +221,11 @@
                     <connections>
                         <outlet property="questionLabel" destination="tBi-Zv-Fa5" id="yd1-MN-KMF"/>
                         <outletCollection property="radioButtons" destination="ttP-SL-3zr" collectionClass="NSMutableArray" id="HS3-8O-hAX"/>
-                        <outletCollection property="radioButtons" destination="Svm-Jb-ZLH" collectionClass="NSMutableArray" id="6sl-oy-MNf"/>
-                        <outletCollection property="radioButtons" destination="ewM-Y4-KW0" collectionClass="NSMutableArray" id="zSC-ep-8HQ"/>
                         <outletCollection property="dinersLabels" destination="E3a-Mm-0qC" collectionClass="NSMutableArray" id="aOe-h9-T4J"/>
-                        <outletCollection property="dinersLabels" destination="bR7-Sa-3gD" collectionClass="NSMutableArray" id="BsG-Y7-YsC"/>
-                        <outletCollection property="dinersLabels" destination="oiq-Me-SJm" collectionClass="NSMutableArray" id="xw7-Kj-YL8"/>
+                        <outletCollection property="radioButtons" destination="4bV-RI-UgM" collectionClass="NSMutableArray" id="TMR-ID-tWu"/>
+                        <outletCollection property="radioButtons" destination="1Ey-5x-4Ju" collectionClass="NSMutableArray" id="bXq-GV-nU5"/>
+                        <outletCollection property="dinersLabels" destination="h6t-F0-jFf" collectionClass="NSMutableArray" id="Bpz-Jd-tMY"/>
+                        <outletCollection property="dinersLabels" destination="alD-t2-Dud" collectionClass="NSMutableArray" id="DKq-gS-MBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

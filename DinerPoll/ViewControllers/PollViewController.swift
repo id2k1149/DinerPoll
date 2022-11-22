@@ -19,6 +19,8 @@ class PollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        questionLabel.text 
+        
         dinersForPoll.forEach {diner in
             print(diner.name)
         }
