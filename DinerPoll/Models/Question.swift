@@ -5,8 +5,6 @@
 //  Created by Max Franz Immelmann on 11/21/22.
 //
 
-import Foundation
-
 class Question {
     let title: String
     let answers: [Diner]

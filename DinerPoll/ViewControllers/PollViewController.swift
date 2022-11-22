@@ -9,6 +9,7 @@ import UIKit
 
 class PollViewController: UIViewController {
     
+    // MARK: @IBOutlet
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var radioButtons: [UIButton]!
     @IBOutlet var dinersLabels: [UILabel]!
@@ -18,14 +19,24 @@ class PollViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        questionLabel.text 
-        
-        dinersForPoll.forEach {diner in
-            print(diner.name)
-        }
-
-        print("name = \(currentUser.name)")
+        updateUI()
     }
+    
+}
+
+// MARK: - Private Methods
+extension PollViewController {
+    
+    private func updateUI() {
+        let question = Question.getQuestion(for: dinersForPoll)
+        questionLabel.text = question.title
+        
+        for (label, diner) in zip(dinersLabels, dinersForPoll) {
+            label.text = diner.name
+        }
+    }
+    
+
+    
     
 }

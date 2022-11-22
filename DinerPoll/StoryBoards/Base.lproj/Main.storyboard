@@ -203,6 +203,9 @@
                                 <rect key="frame" x="112.5" y="353" width="95" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Vote now"/>
+                                <connections>
+                                    <segue destination="L7q-rt-djn" kind="show" id="Ob4-WV-orA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TJ7-Bp-6Dx"/>
@@ -217,8 +220,13 @@
                             <constraint firstItem="TJ7-Bp-6Dx" firstAttribute="trailing" secondItem="Ohc-7B-B7h" secondAttribute="trailing" constant="16" id="zvg-pP-Lkk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Today Poll" id="Xpn-P7-t2g">
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="Bnf-qw-LQk"/>
+                    <navigationItem key="navigationItem" title="Today's Poll" id="Xpn-P7-t2g">
+                        <barButtonItem key="backBarButtonItem" title="back" id="BeY-6J-meP"/>
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="Bnf-qw-LQk">
+                            <connections>
+                                <segue destination="Wgg-rr-1lA" kind="unwind" unwindAction="unwindForLogoutFor:" id="Uls-Ja-Z1F"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="questionLabel" destination="tBi-Zv-Fa5" id="yd1-MN-KMF"/>
@@ -231,8 +239,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Wgg-rr-1lA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3407" y="-342"/>
+            <point key="canvasLocation" x="3360" y="-342"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="kMA-Ci-3Mp">
+            <objects>
+                <viewController id="L7q-rt-djn" userLabel="Results View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yb6-1M-0PK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="POW-x2-bZW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="loI-bi-5V7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H53-gX-Vwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4118" y="-342"/>
         </scene>
         <!--Diners Nav Controller-->
         <scene sceneID="NtE-uN-2tQ">
