@@ -24,17 +24,17 @@ extension Diner {
     
     static func sortDiners(for diners: [Diner]) -> [Diner] {
         var result = [Diner]()
-        var dinersPriceRange = [(Diner, Int)]()
+        var dinersPriceRange = [(Diner, Double)]()
         
         diners.forEach { diner in
-            var dinerTotalPrice = 0
+            var dinerTotalPrice: Double = 0
             
             for index in 0..<diner.menu.count {
-                let dishPrice = Int(Float(diner.menu[index].1.components(separatedBy: "$")[1]) ?? 0)
+                let dishPrice = Double(diner.menu[index].1.components(separatedBy: "$")[1]) ?? 0
                 dinerTotalPrice += dishPrice
             }
             
-            let middlePriceForDish = dinerTotalPrice / diner.menu.count
+            let middlePriceForDish = dinerTotalPrice / Double(diner.menu.count)
             dinersPriceRange.append((diner, middlePriceForDish))
         }
         
