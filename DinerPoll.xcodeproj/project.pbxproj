@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		506B92B6292AE85A00FF45DA /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B92B5292AE85A00FF45DA /* PollViewController.swift */; };
+		509E928F292D27420069205F /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E928E292D27420069205F /* Vote.swift */; };
 		50D49453292BC65E00254AAE /* DinersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D49452292BC65E00254AAE /* DinersTableViewController.swift */; };
 		50D792802926A91C00ED9045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D7927F2926A91C00ED9045 /* AppDelegate.swift */; };
 		50D792822926A91C00ED9045 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D792812926A91C00ED9045 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		506B92B5292AE85A00FF45DA /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
+		509E928E292D27420069205F /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		50D49452292BC65E00254AAE /* DinersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersTableViewController.swift; sourceTree = "<group>"; };
 		50D7927C2926A91C00ED9045 /* DinerPoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinerPoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D7927F2926A91C00ED9045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				50EE1BDD292A8396004F0906 /* Diner.swift */,
 				50EC5167292C5BE5007985B3 /* Question.swift */,
 				50EC5169292C5BF7007985B3 /* Answer.swift */,
+				509E928E292D27420069205F /* Vote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				50EC516A292C5BF7007985B3 /* Answer.swift in Sources */,
 				50D49453292BC65E00254AAE /* DinersTableViewController.swift in Sources */,
 				506B92B6292AE85A00FF45DA /* PollViewController.swift in Sources */,
+				509E928F292D27420069205F /* Vote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

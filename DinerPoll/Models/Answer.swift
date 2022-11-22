@@ -9,6 +9,7 @@ import Foundation
 
 class Answer {
     let diner: Diner
+    var numberOfVotes = 0
     
     init(title: String, diner: Diner) {
         self.diner = diner

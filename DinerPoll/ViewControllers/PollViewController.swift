@@ -9,6 +9,10 @@ import UIKit
 
 class PollViewController: UIViewController {
     
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var radioButtons: [UIButton]!
+    @IBOutlet var dinersLabels: [UILabel]!
+    
     var dinersForPoll: [Diner]!
     var currentUser: User!
 
