@@ -9,18 +9,17 @@ import UIKit
 
 class PollViewController: UIViewController {
     
-    var diners: [Diner]!
+    var dinersForPoll: [Diner]!
+    var currentUser: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sortedDiners = Diner.sortDiners(for: diners)
-        let dinersForPoll = Diner.getThreeDinersInTheMiddle(for: sortedDiners)
-        
         dinersForPoll.forEach {diner in
             print(diner.name)
-            
         }
+        
+        print("name = \(currentUser.name)")
     }
     
 }

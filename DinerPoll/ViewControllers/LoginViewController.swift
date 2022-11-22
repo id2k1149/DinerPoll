@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     
     private let users = User.getUsers()
+    var currentUser: User!
     let diners = Diner.getDiners()
     
     override func viewDidLoad() {
@@ -32,7 +33,10 @@ class LoginViewController: UIViewController {
             if let dinersVC = viewController as? DinersTableViewController {
                 dinersVC.diners = diners
             } else if let pollVC = viewController as? PollViewController {
-                pollVC.diners = diners
+                let sortedDiners = Diner.sortDiners(for: diners)
+                let dinersForPoll = Diner.getThreeDinersInTheMiddle(for: sortedDiners)
+                pollVC.currentUser = currentUser
+                pollVC.dinersForPoll = dinersForPoll
 //                pollVC.view.backgroundColor = .systemOrange
             }
         }
@@ -47,6 +51,7 @@ class LoginViewController: UIViewController {
         
         for index in 0..<users.count {
             if users[index].name == userNameTF.text && users[index].password == passwordTF.text {
+                currentUser = User(name: users[index].name, password: users[index].password)
                 performSegue(withIdentifier: "openPollVC", sender: nil)
             }
         }
