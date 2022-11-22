@@ -28,19 +28,22 @@ extension Diner {
         
         diners.forEach { diner in
             var dinerTotalPrice = 0
+            
             for index in 0..<diner.menu.count {
                 let dishPrice = Int(Float(diner.menu[index].1.components(separatedBy: "$")[1]) ?? 0)
                 dinerTotalPrice += dishPrice
             }
-            dinersPriceRange.append((diner, dinerTotalPrice))
+            
+            let middlePriceForDish = dinerTotalPrice / diner.menu.count
+            dinersPriceRange.append((diner, middlePriceForDish))
         }
         
         let sortedDiners = dinersPriceRange.sorted {
             $0.1 < $1.1
         }
         
-        sortedDiners.forEach {
-            result.append($0.0)
+        sortedDiners.forEach { diner in
+            result.append(diner.0)
         }
         
         return result
