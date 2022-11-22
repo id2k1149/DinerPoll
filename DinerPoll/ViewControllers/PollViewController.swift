@@ -24,7 +24,7 @@ class PollViewController: UIViewController {
         dinersForPoll.forEach {diner in
             print(diner.name)
         }
-        
+
         print("name = \(currentUser.name)")
     }
     

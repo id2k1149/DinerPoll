@@ -25,20 +25,22 @@ class LoginViewController: UIViewController {
     
     //MARK: override functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navigationVC = segue.destination as? UINavigationController else { return }
-        guard let tabBarVC = navigationVC.topViewController as? UITabBarController else { return }
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarVC.viewControllers else { return }
         
         for viewController in viewControllers {
-            if let dinersVC = viewController as? DinersTableViewController {
+            
+            if let dinersNavC = viewController as? DinersNavigationController {
+                guard let dinersVC = dinersNavC.topViewController as? DinersTableViewController else { return }
                 dinersVC.diners = diners
-            } else if let pollVC = viewController as? PollViewController {
+            } else if let pollNavC = viewController as? PollNavigationController {
+                guard let pollVC = pollNavC.topViewController as? PollViewController else { return }
                 let sortedDiners = Diner.sortDiners(for: diners)
                 let dinersForPoll = Diner.getThreeDinersInTheMiddle(for: sortedDiners)
                 pollVC.currentUser = currentUser
                 pollVC.dinersForPoll = dinersForPoll
-//                pollVC.view.backgroundColor = .systemOrange
             }
+            
         }
     }
     
@@ -52,7 +54,7 @@ class LoginViewController: UIViewController {
         for index in 0..<users.count {
             if users[index].name == userNameTF.text && users[index].password == passwordTF.text {
                 currentUser = User(name: users[index].name, password: users[index].password)
-                performSegue(withIdentifier: "openPollVC", sender: nil)
+                performSegue(withIdentifier: "tabBarVC", sender: nil)
             }
         }
         

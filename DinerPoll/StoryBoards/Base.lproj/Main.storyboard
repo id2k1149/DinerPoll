@@ -61,30 +61,12 @@
                         <outlet property="loginButton" destination="BeO-WI-AAT" id="cXL-jQ-Egb"/>
                         <outlet property="passwordTF" destination="dTq-n1-rXT" id="N8B-ox-H6o"/>
                         <outlet property="userNameTF" destination="vnf-Av-mrS" id="DBe-aP-jQo"/>
-                        <segue destination="t8P-TN-KRX" kind="presentation" identifier="openPollVC" animates="NO" id="EWA-9Q-WZK"/>
+                        <segue destination="dp4-Ex-Dy9" kind="presentation" identifier="tabBarVC" id="4Fs-Cf-ty3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="-27"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eKA-2H-0KX">
-            <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="t8P-TN-KRX" userLabel="Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diners" id="nsk-Oe-rNY"/>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Bb0-ep-BRH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WIn-MQ-zHG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="dp4-Ex-Dy9" kind="relationship" relationship="rootViewController" id="TAx-NZ-9g7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3gn-Hc-fE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="953" y="-27"/>
+            <point key="canvasLocation" x="966" y="-27"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="8nQ-G4-zDt">
@@ -104,14 +86,33 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5Dz-M0-f0D" kind="relationship" relationship="viewControllers" id="9pl-lI-1Lt"/>
-                        <segue destination="Wuz-b7-liQ" kind="relationship" relationship="viewControllers" id="MTn-5M-xqM"/>
+                        <segue destination="KgF-el-maI" kind="relationship" relationship="viewControllers" id="9pl-lI-1Lt"/>
+                        <segue destination="8ps-gL-nXj" kind="relationship" relationship="viewControllers" id="MTn-5M-xqM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbu-Dm-0bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="hbf-J3-hph" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1727" y="-27"/>
+        </scene>
+        <!--Poll Nav Controller-->
+        <scene sceneID="mVu-cW-4xs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgF-el-maI" userLabel="Poll Nav Controller" customClass="PollNavigationController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7Vd-mv-jfn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Dz-M0-f0D" kind="relationship" relationship="rootViewController" id="5Vy-Kg-wF1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9H4-7H-vPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2595" y="-342.25352112676057"/>
         </scene>
         <!--Poll View Controller-->
         <scene sceneID="8rA-7r-n3k">
@@ -122,13 +123,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBi-Zv-Fa5">
-                                <rect key="frame" x="126" y="60" width="68.5" height="20.5"/>
+                                <rect key="frame" x="126" y="108.5" width="68.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-7B-B7h">
-                                <rect key="frame" x="16" y="130.5" width="288" height="104"/>
+                                <rect key="frame" x="16" y="179" width="288" height="104"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-7Y-fSi">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
@@ -199,7 +200,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-Rx-mCI">
-                                <rect key="frame" x="112.5" y="304.5" width="95" height="34.5"/>
+                                <rect key="frame" x="112.5" y="353" width="95" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Vote now"/>
                             </button>
@@ -216,8 +217,9 @@
                             <constraint firstItem="TJ7-Bp-6Dx" firstAttribute="trailing" secondItem="Ohc-7B-B7h" secondAttribute="trailing" constant="16" id="zvg-pP-Lkk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
-                    <navigationItem key="navigationItem" title="Today Poll" id="Xpn-P7-t2g"/>
+                    <navigationItem key="navigationItem" title="Today Poll" id="Xpn-P7-t2g">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="Bnf-qw-LQk"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="questionLabel" destination="tBi-Zv-Fa5" id="yd1-MN-KMF"/>
                         <outletCollection property="radioButtons" destination="ttP-SL-3zr" collectionClass="NSMutableArray" id="HS3-8O-hAX"/>
@@ -230,7 +232,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2595" y="-342.25352112676057"/>
+            <point key="canvasLocation" x="3407" y="-342"/>
+        </scene>
+        <!--Diners Nav Controller-->
+        <scene sceneID="NtE-uN-2tQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ps-gL-nXj" userLabel="Diners Nav Controller" customClass="DinersNavigationController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Diners" image="menucard" catalog="system" id="eNb-YT-ayb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Wj9-e1-vtZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wuz-b7-liQ" kind="relationship" relationship="rootViewController" id="56k-lI-UNP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQp-Vx-7zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2595" y="355.98591549295776"/>
         </scene>
         <!--Diners View Controller-->
         <scene sceneID="oDg-iP-cu3">
@@ -255,12 +276,18 @@
                             <outlet property="delegate" destination="Wuz-b7-liQ" id="3YX-AC-4uY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Diners" image="menucard" catalog="system" id="eNb-YT-ayb"/>
-                    <navigationItem key="navigationItem" title="Diners List with Menu" id="pdl-TZ-Gbu"/>
+                    <navigationItem key="navigationItem" title="Diners List with Menu" id="pdl-TZ-Gbu">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="Ya1-de-h8Q">
+                            <connections>
+                                <segue destination="3fw-kd-3G5" kind="unwind" unwindAction="unwindForLogoutFor:" id="Vaf-yl-8h8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uo-FG-30n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3fw-kd-3G5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2595" y="357"/>
+            <point key="canvasLocation" x="3360" y="356"/>
         </scene>
     </scenes>
     <resources>
