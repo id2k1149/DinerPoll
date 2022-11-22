@@ -46,12 +46,11 @@ extension Diner {
         return result
     }
     
-    static func getMiddleDiners(for diners: [Diner]) -> [Diner]{
+    static func getThreeDinersInTheMiddle(for diners: [Diner]) -> [Diner]{
         var result = [Diner]()
-        let countMin = diners.count / 3
-        let countMax = diners.count - countMin
+        let indexInMiddle = diners.count / 2
         
-        for index in countMin..<countMax {
+        for index in (indexInMiddle - 1)...(indexInMiddle + 1) {
             result.append(diners[index])
         }
         

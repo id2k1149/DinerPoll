@@ -15,6 +15,8 @@
 		50D792872926A91C00ED9045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D792852926A91C00ED9045 /* Main.storyboard */; };
 		50D792892926A91D00ED9045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D792882926A91D00ED9045 /* Assets.xcassets */; };
 		50D7928C2926A91D00ED9045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D7928A2926A91D00ED9045 /* LaunchScreen.storyboard */; };
+		50EC5168292C5BE5007985B3 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC5167292C5BE5007985B3 /* Question.swift */; };
+		50EC516A292C5BF7007985B3 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC5169292C5BF7007985B3 /* Answer.swift */; };
 		50EE1BDC292A82A0004F0906 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BDB292A82A0004F0906 /* DataSource.swift */; };
 		50EE1BDE292A8396004F0906 /* Diner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BDD292A8396004F0906 /* Diner.swift */; };
 		50EE1BE6292AA96E004F0906 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BE5292AA96D004F0906 /* User.swift */; };
@@ -31,6 +33,8 @@
 		50D792882926A91D00ED9045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50D7928B2926A91D00ED9045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50D7928D2926A91D00ED9045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50EC5167292C5BE5007985B3 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		50EC5169292C5BF7007985B3 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		50EE1BDB292A82A0004F0906 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		50EE1BDD292A8396004F0906 /* Diner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diner.swift; sourceTree = "<group>"; };
 		50EE1BE5292AA96D004F0906 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -108,8 +112,10 @@
 		50D792962926A97C00ED9045 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				50EE1BDD292A8396004F0906 /* Diner.swift */,
 				50EE1BE5292AA96D004F0906 /* User.swift */,
+				50EE1BDD292A8396004F0906 /* Diner.swift */,
+				50EC5167292C5BE5007985B3 /* Question.swift */,
+				50EC5169292C5BF7007985B3 /* Answer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,9 +202,11 @@
 				50EE1BDE292A8396004F0906 /* Diner.swift in Sources */,
 				50D792842926A91C00ED9045 /* LoginViewController.swift in Sources */,
 				50EE1BE6292AA96E004F0906 /* User.swift in Sources */,
+				50EC5168292C5BE5007985B3 /* Question.swift in Sources */,
 				50D792802926A91C00ED9045 /* AppDelegate.swift in Sources */,
 				50EE1BDC292A82A0004F0906 /* DataSource.swift in Sources */,
 				50D792822926A91C00ED9045 /* SceneDelegate.swift in Sources */,
+				50EC516A292C5BF7007985B3 /* Answer.swift in Sources */,
 				50D49453292BC65E00254AAE /* DinersTableViewController.swift in Sources */,
 				506B92B6292AE85A00FF45DA /* PollViewController.swift in Sources */,
 			);

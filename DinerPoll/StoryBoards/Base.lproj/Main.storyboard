@@ -120,15 +120,83 @@
                     <view key="view" contentMode="scaleToFill" id="VE1-Sp-nKR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBi-Zv-Fa5">
+                                <rect key="frame" x="126" y="72" width="68.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-7B-B7h">
+                                <rect key="frame" x="16" y="142.5" width="288" height="117.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-7Y-fSi">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttP-SL-3zr">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="B"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-Mm-0qC">
+                                                <rect key="frame" x="247.5" y="0.0" width="40.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="RQL-dZ-4Gb">
+                                        <rect key="frame" x="0.0" y="41.5" width="288" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svm-Jb-ZLH">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="B"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR7-Sa-3gD">
+                                                <rect key="frame" x="247.5" y="0.0" width="40.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="42A-kV-Cpm">
+                                        <rect key="frame" x="0.0" y="83" width="288" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewM-Y4-KW0">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="B"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-Me-SJm">
+                                                <rect key="frame" x="247.5" y="0.0" width="40.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TJ7-Bp-6Dx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tBi-Zv-Fa5" firstAttribute="centerX" secondItem="VE1-Sp-nKR" secondAttribute="centerX" id="5oO-2w-rea"/>
+                            <constraint firstItem="tBi-Zv-Fa5" firstAttribute="top" secondItem="TJ7-Bp-6Dx" secondAttribute="top" constant="16" id="FqA-rj-j9Z"/>
+                            <constraint firstItem="Ohc-7B-B7h" firstAttribute="leading" secondItem="TJ7-Bp-6Dx" secondAttribute="leading" constant="16" id="MUp-gK-GAE"/>
+                            <constraint firstItem="Ohc-7B-B7h" firstAttribute="top" secondItem="tBi-Zv-Fa5" secondAttribute="bottom" constant="50" id="NIx-1Y-MZP"/>
+                            <constraint firstItem="TJ7-Bp-6Dx" firstAttribute="trailing" secondItem="Ohc-7B-B7h" secondAttribute="trailing" constant="16" id="zvg-pP-Lkk"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
                     <navigationItem key="navigationItem" title="Today Poll" id="Xpn-P7-t2g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2595" y="-342"/>
+            <point key="canvasLocation" x="2595" y="-342.25352112676057"/>
         </scene>
         <!--Diners View Controller-->
         <scene sceneID="oDg-iP-cu3">
