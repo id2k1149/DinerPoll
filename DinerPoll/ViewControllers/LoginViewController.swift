@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-// MARK: extension
+// MARK: - Private Methods
 extension LoginViewController {
     
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {

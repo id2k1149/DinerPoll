@@ -22,17 +22,20 @@ class PollViewController: UIViewController {
     @IBOutlet var radioButtons: [UIButton]!
     
     // MARK: privates
+    private var answerChoosen: String!
+    
     var dinersForPoll: [Diner]!
     var currentUser: User!
-    var answerChoosen: String!
     var voteResult: VoteResult!
     var voteLog: VoteLog!
 
+    // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
+    // MARK: @IBAction
     @IBAction func radioButtonTapped(_ sender: UIButton) {
         
         radioButtons.forEach { button in
@@ -87,16 +90,14 @@ extension PollViewController {
                 showQuestion()
             }
         }
-        
-       
     }
     
-    func showVoteAgain() {
+    private func showVoteAgain() {
         questionStack.isHidden = true
         voteAgainStack.isHidden = false
     }
     
-    func showQuestion() {
+    private func showQuestion() {
         questionStack.isHidden = false
         voteAgainStack.isHidden = true
         
@@ -131,8 +132,4 @@ extension PollViewController {
         alert.addAction(okAction)
         present(alert, animated: true)
     }
-    
-
-    
-    
 }
