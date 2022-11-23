@@ -18,10 +18,25 @@ class PollViewController: UIViewController {
     
     var dinersForPoll: [Diner]!
     var currentUser: User!
+    var answerChoosen: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    }
+    
+    @IBAction func radioButtonTapped(_ sender: UIButton) {
+        
+        radioButtons.forEach { button in
+            guard let circle = UIImage(systemName: "circle") else { return }
+            button.setImage(circle, for: .normal)
+        }
+        
+        guard let buttonIndex = radioButtons.firstIndex(of: sender) else { return }
+        answerChoosen = dinersForPoll[buttonIndex].name
+        print(answerChoosen ?? "N/A")
+        guard let circleFill = UIImage(systemName: "circle.fill") else { return }
+        sender.setImage(circleFill, for: .normal)
     }
     
 }

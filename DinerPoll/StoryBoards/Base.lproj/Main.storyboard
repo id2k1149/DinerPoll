@@ -140,7 +140,10 @@
                                                     <constraint firstAttribute="width" secondItem="ttP-SL-3zr" secondAttribute="height" multiplier="1:1" id="vzh-mB-RG4"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="circlebadge" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="radioButtonTapped:" destination="5Dz-M0-f0D" eventType="touchUpInside" id="N6J-of-r6A"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-Mm-0qC">
                                                 <rect key="frame" x="40" y="0.0" width="248" height="30"/>
@@ -194,7 +197,10 @@
                                                     <constraint firstAttribute="width" secondItem="4bV-RI-UgM" secondAttribute="height" multiplier="1:1" id="d9z-88-btD"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="circlebadge" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="radioButtonTapped:" destination="5Dz-M0-f0D" eventType="touchUpInside" id="57e-cs-dfd"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner #2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6t-F0-jFf">
                                                 <rect key="frame" x="40" y="0.0" width="248" height="30"/>
@@ -248,7 +254,10 @@
                                                     <constraint firstAttribute="width" secondItem="1Ey-5x-4Ju" secondAttribute="height" multiplier="1:1" id="9se-Xg-IZb"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="circlebadge" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="radioButtonTapped:" destination="5Dz-M0-f0D" eventType="touchUpInside" id="pwU-Uz-6uo"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner #3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alD-t2-Dud">
                                                 <rect key="frame" x="40" y="0.0" width="248" height="30"/>
@@ -418,7 +427,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circlebadge" catalog="system" width="128" height="122"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
         <image name="menucard" catalog="system" width="108" height="128"/>
         <image name="questionmark.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
