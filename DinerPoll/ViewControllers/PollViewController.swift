@@ -42,6 +42,8 @@ class PollViewController: UIViewController {
     
     @IBAction func VoteButtonTaped() {
         print(answerChoosen ?? "N/A")
+        guard let currentVotes = voteResult.answers[answerChoosen] else  { return }
+        voteResult.answers.updateValue(currentVotes + 1, forKey: answerChoosen)
        
         print(voteResult.answers)
         
