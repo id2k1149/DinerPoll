@@ -19,6 +19,8 @@ class PollViewController: UIViewController {
     var dinersForPoll: [Diner]!
     var currentUser: User!
     var answerChoosen: String!
+    var voteResult: VoteResult!
+    var voteLog: VoteLog!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,8 @@ class PollViewController: UIViewController {
     
     @IBAction func VoteButtonTaped() {
         print(answerChoosen ?? "N/A")
+       
+        print(voteResult.answers)
         
     }
     
@@ -59,24 +63,16 @@ extension PollViewController {
         for (label, diner) in zip(menuCollection, dinersForPoll) {
             var menuText = ""
             for dish in diner.menu {
-                print(dish)
                 menuText += "\(dish.0) \n"
             }
-            print("-----")
-            print(menuText)
-            print("-----")
             label.text = menuText
         }
         
         for (label, diner) in zip(priceCollection, dinersForPoll) {
             var price = ""
             for dish in diner.menu {
-                print(dish)
                 price += "\(dish.1) \n"
             }
-            print("-----")
-            print(price)
-            print("-----")
             label.text = price
         }
     }

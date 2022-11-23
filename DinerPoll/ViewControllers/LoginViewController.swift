@@ -9,21 +9,26 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    //MARK: @IBOutlet
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var loginButton: UIButton!
     
+    //MARK: privates
     private let users = User.getUsers()
-    private var currentUser: User!
     private let diners = Diner.getDiners()
+    private var currentUser: User!
+    private var dinersForPoll: [Diner]!
+    private var voteResult = VoteResult.shared
     
+    //MARK: override functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 10
+        setInitialData()
     }
     
-    //MARK: override functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarVC.viewControllers else { return }
@@ -34,10 +39,9 @@ class LoginViewController: UIViewController {
                 if let dinersVC = navigationVC.topViewController as? DinersTableViewController {
                     dinersVC.diners = diners
                 } else if let pollVC = navigationVC.topViewController as? PollViewController {
-                    let sortedDiners = Diner.sortDiners(for: diners)
-                    let dinersForPoll = Diner.getThreeDinersInTheMiddle(for: sortedDiners)
                     pollVC.currentUser = currentUser
                     pollVC.dinersForPoll = dinersForPoll
+                    pollVC.voteResult = voteResult
                 }
             }
             
@@ -49,6 +53,7 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
 
+    //MARK: @IBAction
     @IBAction func loginButtonTapped() {
         
         for index in 0..<users.count {
@@ -71,7 +76,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-// MARK: UIAlertController
+// MARK: extension
 extension LoginViewController {
     
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
@@ -81,6 +86,15 @@ extension LoginViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    private func setInitialData() {
+        let sortedDiners = Diner.sortDiners(for: diners)
+        dinersForPoll = Diner.getThreeDinersInTheMiddle(for: sortedDiners)
+        dinersForPoll.forEach { diner in
+            voteResult.answers.updateValue(0, forKey: diner.name)
+        }
+        print("initial data = \(voteResult.answers)")
     }
     
 }
