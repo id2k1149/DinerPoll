@@ -7,15 +7,12 @@
 
 import Foundation
 
+// Singleton
 class VoteLog {
+    static var shared = VoteLog()
     
-    var date = Date()
-    var user: User
-    var userChoice: Diner
+    var logs = [(Date, String, String)]()
     
-    init(user: User, userChoice: Diner) {
-        self.user = user
-        self.userChoice = userChoice
-    }
+    private init() {}
     
 }
