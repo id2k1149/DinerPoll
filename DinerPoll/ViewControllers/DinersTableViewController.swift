@@ -32,8 +32,13 @@ class DinersTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         
         for i in 1...diners[indexPath.section].menu.count {
+            
+//            if indexPath.item == i - 1 {
+//                content.text = "\(i). \(menu[indexPath.item].0) for \(menu[indexPath.item].1)"
+//            }
+            
             if indexPath.item == i - 1 {
-                content.text = "\(i). \(menu[indexPath.item].0) for \(menu[indexPath.item].1)"
+                content.text = "\(i). "
             }
         }
 

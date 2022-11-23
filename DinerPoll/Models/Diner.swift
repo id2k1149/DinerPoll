@@ -9,9 +9,9 @@ import Foundation
 
 final class Diner {
     let name: String
-    let menu: [(String, String)]
+    let menu: [String : String]
     
-    init(name: String, menu: [(String, String)]) {
+    init(name: String, menu: [String : String]) {
         self.name = name
         self.menu = menu
     }
@@ -29,11 +29,11 @@ extension Diner {
         diners.forEach { diner in
             var dinerTotalPrice: Double = 0
             
-            for index in 0..<diner.menu.count {
-                let dishPrice = Double(diner.menu[index].1.components(separatedBy: "$")[1]) ?? 0
+            for eachPrice in diner.menu {
+                guard let dishPrice = Double(eachPrice.value.components(separatedBy: "$")[1]) else { return }
                 dinerTotalPrice += dishPrice
             }
-            
+        
             let middlePriceForDish = dinerTotalPrice / Double(diner.menu.count)
             dinersPriceRange.append((diner, middlePriceForDish))
         }
