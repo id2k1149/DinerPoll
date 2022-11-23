@@ -10,12 +10,18 @@ import UIKit
 class PollViewController: UIViewController {
     
     // MARK: @IBOutlet
+    @IBOutlet var questionStack: UIStackView!
+    @IBOutlet var voteAgainStack: UIStackView!
+    
     @IBOutlet var questionLabel: UILabel!
-    @IBOutlet var radioButtons: [UIButton]!
+    
     @IBOutlet var dinersLabels: [UILabel]!
     @IBOutlet var menuCollection: [UILabel]!
     @IBOutlet var priceCollection: [UILabel]!
     
+    @IBOutlet var radioButtons: [UIButton]!
+    
+    // MARK: privates
     var dinersForPoll: [Diner]!
     var currentUser: User!
     var answerChoosen: String!
@@ -41,6 +47,11 @@ class PollViewController: UIViewController {
     }
     
     @IBAction func VoteButtonTaped() {
+        if answerChoosen == nil {
+            showAlert(title: "What is your choice?", message: "Please vote for any diner")
+            return
+        }
+        
         guard let currentVotes = voteResult.answers[answerChoosen] else  { return }
         voteResult.answers.updateValue(currentVotes + 1, forKey: answerChoosen)
         let logCount = voteLog.logs.count
@@ -51,6 +62,7 @@ class PollViewController: UIViewController {
         voteLog.logs.forEach {log in
             print(log.0, log.1, log.2)
         }
+        
     }
     
 }
@@ -59,6 +71,35 @@ class PollViewController: UIViewController {
 extension PollViewController {
     
     private func updateUI() {
+        // hide stacks
+        for stackView in [questionStack, voteAgainStack] {
+            stackView?.isHidden = true
+        }
+        
+        let sortedVoteLog = voteLog.logs.sorted {
+            $0.0 > $1.0
+        }
+        
+        sortedVoteLog.forEach {log in
+            if log.1 == currentUser.name && log.2 != "N/A" {
+                showVoteAgain()
+            } else {
+                showQuestion()
+            }
+        }
+        
+       
+    }
+    
+    func showVoteAgain() {
+        questionStack.isHidden = true
+        voteAgainStack.isHidden = false
+    }
+    
+    func showQuestion() {
+        questionStack.isHidden = false
+        voteAgainStack.isHidden = true
+        
         let question = Question.getQuestion(for: dinersForPoll)
         questionLabel.text = question.title
         
@@ -81,6 +122,14 @@ extension PollViewController {
             }
             label.text = price
         }
+        
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
     
 
