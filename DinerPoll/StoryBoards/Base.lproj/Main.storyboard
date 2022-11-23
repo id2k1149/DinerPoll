@@ -309,7 +309,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Vote now"/>
                                 <connections>
-                                    <segue destination="L7q-rt-djn" kind="show" id="Ob4-WV-orA"/>
+                                    <action selector="VoteButtonTaped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="W0E-v1-bDS"/>
+                                    <segue destination="L7q-rt-djn" kind="show" animates="NO" id="Ob4-WV-orA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -354,19 +355,26 @@
             </objects>
             <point key="canvasLocation" x="3360" y="-342.25352112676057"/>
         </scene>
-        <!--Results View Controller-->
+        <!--After Vote View Controller-->
         <scene sceneID="kMA-Ci-3Mp">
             <objects>
-                <viewController id="L7q-rt-djn" userLabel="Results View Controller" sceneMemberID="viewController">
+                <viewController id="L7q-rt-djn" userLabel="After Vote View Controller" customClass="AfterVoteViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yb6-1M-0PK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="POW-x2-bZW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="loI-bi-5V7"/>
+                    <navigationItem key="navigationItem" id="loI-bi-5V7">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="tx9-23-W2c">
+                            <connections>
+                                <segue destination="YfF-re-vqV" kind="unwind" unwindAction="unwindForLogoutFor:" id="USc-aR-JlP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H53-gX-Vwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="YfF-re-vqV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4118" y="-342"/>
         </scene>
@@ -377,7 +385,7 @@
                     <tabBarItem key="tabBarItem" title="Diners" image="menucard" catalog="system" id="eNb-YT-ayb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Wj9-e1-vtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

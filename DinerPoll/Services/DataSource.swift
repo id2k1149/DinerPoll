@@ -10,7 +10,7 @@ class DataStore {
     
     var users: [User] {
         var users = [User]()
-        let randomMax = Int.random(in: 3...5)
+        let randomMax = Int.random(in: 4...5)
         
         for index in 1...randomMax {
             users.append(User(name: "User\(index)", password: "pass"))

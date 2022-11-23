@@ -7,14 +7,15 @@
 
 import Foundation
 
-class Vote {
-    let date: Date
-    let user: User
-    let userChoice: Diner
+class VoteLog {
     
-    init(date: Date, user: User, userChoice: Diner) {
-        self.date = date
+    var date = Date()
+    var user: User
+    var userChoice: Diner
+    
+    init(user: User, userChoice: Diner) {
         self.user = user
         self.userChoice = userChoice
     }
+    
 }

@@ -14,8 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     
     private let users = User.getUsers()
-    var currentUser: User!
-    let diners = Diner.getDiners()
+    private var currentUser: User!
+    private let diners = Diner.getDiners()
     
     override func viewDidLoad() {
         super.viewDidLoad()

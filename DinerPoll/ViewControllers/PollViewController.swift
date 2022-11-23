@@ -34,9 +34,13 @@ class PollViewController: UIViewController {
         
         guard let buttonIndex = radioButtons.firstIndex(of: sender) else { return }
         answerChoosen = dinersForPoll[buttonIndex].name
-        print(answerChoosen ?? "N/A")
         guard let circleFill = UIImage(systemName: "circle.fill") else { return }
         sender.setImage(circleFill, for: .normal)
+    }
+    
+    @IBAction func VoteButtonTaped() {
+        print(answerChoosen ?? "N/A")
+        
     }
     
 }
