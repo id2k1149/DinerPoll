@@ -24,6 +24,7 @@ class PollViewController: UIViewController {
     // MARK: privates
     private var answerChoosen: String!
     
+    var diners: [Diner]!
     var dinersForPoll: [Diner]!
     var currentUser: User!
     var voteResult: VoteResult!
@@ -41,8 +42,26 @@ class PollViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let afterVoteVC = segue.destination as? ResultsViewController else { return }
-        afterVoteVC.voteResult = voteResult
+        
+        guard let navController = segue.destination as? UINavigationController else { return }
+        guard let tapBarVC = navController.topViewController as? UITabBarController else { return }
+        guard let viewControllers = tapBarVC.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            if let dinersVC = viewController as? DinersTableViewController {
+                dinersVC.diners = diners
+            } else if let pollVC = viewController as? PollViewController {
+                let currenLog = (Date(), currentUser.name, "N/A")
+                voteLog.logs.append(currenLog)
+                pollVC.currentUser = currentUser
+                pollVC.diners = diners
+                pollVC.dinersForPoll = dinersForPoll
+                pollVC.voteResult = voteResult
+                pollVC.voteLog = voteLog
+            } else if let resultsVC = viewController as? ResultsViewController {
+                resultsVC.voteResult = voteResult
+            }
+        }
     }
     
     // MARK: @IBAction
@@ -77,8 +96,13 @@ class PollViewController: UIViewController {
             print(log.0, log.1, log.2)
         }
         
-        performSegue(withIdentifier: "afterVoteID", sender: nil)
+        performSegue(withIdentifier: "resultsID", sender: nil)
         
+    }
+    
+    
+    @IBAction func NoButtonTapped() {
+        performSegue(withIdentifier: "resultsID", sender: nil)
     }
     
 }

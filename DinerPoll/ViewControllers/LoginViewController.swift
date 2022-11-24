@@ -43,6 +43,7 @@ class LoginViewController: UIViewController {
                 let currenLog = (Date(), currentUser.name, "N/A")
                 voteLog.logs.append(currenLog)
                 pollVC.currentUser = currentUser
+                pollVC.diners = diners
                 pollVC.dinersForPoll = dinersForPoll
                 pollVC.voteResult = voteResult
                 pollVC.voteLog = voteLog
