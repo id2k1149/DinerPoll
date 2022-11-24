@@ -61,58 +61,208 @@
                         <outlet property="loginButton" destination="BeO-WI-AAT" id="cXL-jQ-Egb"/>
                         <outlet property="passwordTF" destination="dTq-n1-rXT" id="N8B-ox-H6o"/>
                         <outlet property="userNameTF" destination="vnf-Av-mrS" id="DBe-aP-jQo"/>
-                        <segue destination="dp4-Ex-Dy9" kind="presentation" identifier="tabBarVC" id="4Fs-Cf-ty3"/>
+                        <segue destination="hRA-rX-eAh" kind="presentation" identifier="NavControllerID" animates="NO" id="sAW-90-uns"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-27"/>
+            <point key="canvasLocation" x="1828" y="1046"/>
         </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="8nQ-G4-zDt">
+        <!--Navigation Controller-->
+        <scene sceneID="Nog-WJ-tdH">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="dp4-Ex-Dy9" customClass="TabBarViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="hRA-rX-eAh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XxC-2E-x9J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EzW-OE-uLX" kind="relationship" relationship="rootViewController" id="TVh-nV-T3h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAz-u5-AA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2594" y="1046"/>
+        </scene>
+        <!--Today's Poll-->
+        <scene sceneID="fqZ-kw-mbh">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="EzW-OE-uLX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="NCk-s8-0za">
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="eA3-Rj-fA7">
+                    <navigationItem key="navigationItem" title="Today's Poll" id="LEh-d2-tmE">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" image="rectangle.portrait.and.arrow.right" catalog="system" id="EO0-Op-ism">
                             <connections>
-                                <segue destination="hbf-J3-hph" kind="unwind" unwindAction="unwindForLogoutFor:" id="ZEq-bv-AcS"/>
+                                <segue destination="fiI-sY-wIg" kind="unwind" animates="NO" unwindAction="unwindForLogoutFor:" id="0QN-Lf-bYm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CMs-aK-wZr">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="goZ-j8-xwc">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="KgF-el-maI" kind="relationship" relationship="viewControllers" id="9pl-lI-1Lt"/>
-                        <segue destination="8ps-gL-nXj" kind="relationship" relationship="viewControllers" id="MTn-5M-xqM"/>
+                        <segue destination="L7q-rt-djn" kind="relationship" relationship="viewControllers" id="1b6-Zs-QDg"/>
+                        <segue destination="td3-OA-fj1" kind="relationship" relationship="viewControllers" id="YB3-H8-yDv"/>
+                        <segue destination="5Dz-M0-f0D" kind="relationship" relationship="viewControllers" id="yaC-9D-oV4"/>
+                        <segue destination="Wuz-b7-liQ" kind="relationship" relationship="viewControllers" id="NX9-g7-7Pk"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pbu-Dm-0bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="hbf-J3-hph" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNZ-lo-Pw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fiI-sY-wIg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="-27"/>
+            <point key="canvasLocation" x="3338" y="1046"/>
         </scene>
-        <!--Poll Nav Controller-->
-        <scene sceneID="mVu-cW-4xs">
+        <!--Results View Controller-->
+        <scene sceneID="kMA-Ci-3Mp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgF-el-maI" userLabel="Poll Nav Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Poll" image="questionmark.bubble.fill" catalog="system" id="IYf-WE-fHs"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7Vd-mv-jfn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="L7q-rt-djn" userLabel="Results View Controller" customClass="AfterVoteViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yb6-1M-0PK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current results:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXe-zN-4zP">
+                                <rect key="frame" x="16" y="191" width="343" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="iui-2y-9Vp">
+                                <rect key="frame" x="127.5" y="278.5" width="120" height="121.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qVk-dG-0wd">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="121.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XR-0q-j12">
+                                                <rect key="frame" x="0.0" y="0.0" width="55.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9Q-GD-BVL">
+                                                <rect key="frame" x="0.0" y="50.5" width="55.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd3-8n-OQI">
+                                                <rect key="frame" x="0.0" y="101" width="55.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fsT-TU-qmd">
+                                        <rect key="frame" x="109.5" y="0.0" width="10.5" height="121.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gol-BL-bHZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="10.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSc-dN-SUK">
+                                                <rect key="frame" x="0.0" y="50.5" width="10.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-H7-2vc">
+                                                <rect key="frame" x="0.0" y="101" width="10.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT WINNER IS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-FS-TtM">
+                                <rect key="frame" x="80" y="430" width="215.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPp-8i-Y9Z">
+                                <rect key="frame" x="162" y="476.5" width="51" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="POW-x2-bZW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iui-2y-9Vp" firstAttribute="top" secondItem="MXe-zN-4zP" secondAttribute="bottom" constant="60" id="BfE-dy-hmQ"/>
+                            <constraint firstItem="MXe-zN-4zP" firstAttribute="leading" secondItem="POW-x2-bZW" secondAttribute="leading" constant="16" id="DfG-vh-6bd"/>
+                            <constraint firstItem="WRk-FS-TtM" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="Q40-3g-mb8"/>
+                            <constraint firstItem="WRk-FS-TtM" firstAttribute="top" secondItem="iui-2y-9Vp" secondAttribute="bottom" constant="30" id="QrY-uR-wyG"/>
+                            <constraint firstItem="MXe-zN-4zP" firstAttribute="top" secondItem="POW-x2-bZW" secondAttribute="top" constant="95" id="RoK-VK-oqP"/>
+                            <constraint firstItem="POW-x2-bZW" firstAttribute="trailing" secondItem="MXe-zN-4zP" secondAttribute="trailing" constant="16" id="aA0-Yq-BZM"/>
+                            <constraint firstItem="rPp-8i-Y9Z" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="dkg-zx-wTC"/>
+                            <constraint firstItem="rPp-8i-Y9Z" firstAttribute="top" secondItem="WRk-FS-TtM" secondAttribute="bottom" constant="20" id="jyq-S6-tGz"/>
+                            <constraint firstItem="iui-2y-9Vp" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="zAg-6n-q9J"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Results" image="menucard.fill" catalog="system" id="JJE-bx-RdV"/>
+                    <navigationItem key="navigationItem" id="loI-bi-5V7">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="tx9-23-W2c">
+                            <connections>
+                                <segue destination="YfF-re-vqV" kind="unwind" unwindAction="unwindForLogoutFor:" id="USc-aR-JlP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="5Dz-M0-f0D" kind="relationship" relationship="rootViewController" id="5Vy-Kg-wF1"/>
+                        <outlet property="winnerLabel" destination="rPp-8i-Y9Z" id="f2D-VW-HtE"/>
+                        <outletCollection property="dinerLabels" destination="7XR-0q-j12" collectionClass="NSMutableArray" id="wlQ-1c-tkH"/>
+                        <outletCollection property="dinerLabels" destination="l9Q-GD-BVL" collectionClass="NSMutableArray" id="hGB-cF-ae4"/>
+                        <outletCollection property="dinerLabels" destination="zd3-8n-OQI" collectionClass="NSMutableArray" id="pq2-Da-OiG"/>
+                        <outletCollection property="voteLabels" destination="gol-BL-bHZ" collectionClass="NSMutableArray" id="AXv-ji-oex"/>
+                        <outletCollection property="voteLabels" destination="xSc-dN-SUK" collectionClass="NSMutableArray" id="6tn-Iz-MfL"/>
+                        <outletCollection property="voteLabels" destination="cFw-H7-2vc" collectionClass="NSMutableArray" id="hTb-ht-q61"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9H4-7H-vPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H53-gX-Vwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="YfF-re-vqV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2595" y="-342.25352112676057"/>
+            <point key="canvasLocation" x="2305" y="2016"/>
+        </scene>
+        <!--Diners View Controller-->
+        <scene sceneID="oDg-iP-cu3">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="Wuz-b7-liQ" userLabel="Diners View Controller" customClass="DinersTableViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rbg-V7-xAe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dinerID" id="2wF-N0-w38">
+                                <rect key="frame" x="0.0" y="50" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2wF-N0-w38" id="GVT-yl-V53">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wuz-b7-liQ" id="KBD-gJ-sdq"/>
+                            <outlet property="delegate" destination="Wuz-b7-liQ" id="3YX-AC-4uY"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="All Diners" image="book.fill" catalog="system" id="8Cf-Mv-MNj"/>
+                    <navigationItem key="navigationItem" title="Diners List with Menu" id="pdl-TZ-Gbu">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="Ya1-de-h8Q">
+                            <connections>
+                                <segue destination="3fw-kd-3G5" kind="unwind" identifier="" unwindAction="unwindForLogoutFor:" id="Vaf-yl-8h8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2uo-FG-30n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3fw-kd-3G5" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3022" y="2016"/>
         </scene>
         <!--Poll View Controller-->
         <scene sceneID="8rA-7r-n3k">
@@ -364,6 +514,7 @@
                             <constraint firstItem="eLP-zJ-fW8" firstAttribute="centerY" secondItem="VE1-Sp-nKR" secondAttribute="centerY" id="ln5-eu-bE1"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Vote" image="questionmark.folder.fill" catalog="system" id="Vlu-Zl-n3L"/>
                     <navigationItem key="navigationItem" title="Today's Poll" id="Xpn-P7-t2g">
                         <barButtonItem key="backBarButtonItem" title="back" id="BeY-6J-meP"/>
                         <barButtonItem key="rightBarButtonItem" title="logout" id="Bnf-qw-LQk">
@@ -388,197 +539,51 @@
                         <outletCollection property="menuCollection" destination="mo0-wR-mhy" collectionClass="NSMutableArray" id="GRe-Yx-zny"/>
                         <outletCollection property="menuCollection" destination="wHg-gW-YUl" collectionClass="NSMutableArray" id="nhL-dE-DFf"/>
                         <outletCollection property="menuCollection" destination="if1-E0-BGV" collectionClass="NSMutableArray" id="hxg-W8-5Nv"/>
-                        <segue destination="L7q-rt-djn" kind="show" identifier="afterVoteID" id="8EL-Hq-kRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Wgg-rr-1lA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3360" y="-342.25352112676057"/>
+            <point key="canvasLocation" x="3762" y="2017"/>
         </scene>
-        <!--After Vote View Controller-->
-        <scene sceneID="kMA-Ci-3Mp">
+        <!--Logs View Controller-->
+        <scene sceneID="suL-aT-9je">
             <objects>
-                <viewController id="L7q-rt-djn" userLabel="After Vote View Controller" customClass="AfterVoteViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yb6-1M-0PK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your vote." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG6-Rc-rMv">
-                                <rect key="frame" x="16" y="126" width="343" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current results:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXe-zN-4zP">
-                                <rect key="frame" x="16" y="191" width="343" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="iui-2y-9Vp">
-                                <rect key="frame" x="127.5" y="278.5" width="120" height="121.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qVk-dG-0wd">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="121.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XR-0q-j12">
-                                                <rect key="frame" x="0.0" y="0.0" width="55.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9Q-GD-BVL">
-                                                <rect key="frame" x="0.0" y="50.5" width="55.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diner 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd3-8n-OQI">
-                                                <rect key="frame" x="0.0" y="101" width="55.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fsT-TU-qmd">
-                                        <rect key="frame" x="109.5" y="0.0" width="10.5" height="121.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gol-BL-bHZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="10.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSc-dN-SUK">
-                                                <rect key="frame" x="0.0" y="50.5" width="10.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-H7-2vc">
-                                                <rect key="frame" x="0.0" y="101" width="10.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT WINNER IS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-FS-TtM">
-                                <rect key="frame" x="80" y="430" width="215.5" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPp-8i-Y9Z">
-                                <rect key="frame" x="162" y="476.5" width="51" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="POW-x2-bZW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="MXe-zN-4zP" firstAttribute="top" secondItem="PG6-Rc-rMv" secondAttribute="bottom" constant="35" id="63D-qz-XhF"/>
-                            <constraint firstItem="iui-2y-9Vp" firstAttribute="top" secondItem="MXe-zN-4zP" secondAttribute="bottom" constant="60" id="BfE-dy-hmQ"/>
-                            <constraint firstItem="PG6-Rc-rMv" firstAttribute="leading" secondItem="POW-x2-bZW" secondAttribute="leading" constant="16" id="DQN-hZ-TjA"/>
-                            <constraint firstItem="MXe-zN-4zP" firstAttribute="leading" secondItem="POW-x2-bZW" secondAttribute="leading" constant="16" id="DfG-vh-6bd"/>
-                            <constraint firstItem="WRk-FS-TtM" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="Q40-3g-mb8"/>
-                            <constraint firstItem="WRk-FS-TtM" firstAttribute="top" secondItem="iui-2y-9Vp" secondAttribute="bottom" constant="30" id="QrY-uR-wyG"/>
-                            <constraint firstItem="POW-x2-bZW" firstAttribute="trailing" secondItem="MXe-zN-4zP" secondAttribute="trailing" constant="16" id="aA0-Yq-BZM"/>
-                            <constraint firstItem="POW-x2-bZW" firstAttribute="trailing" secondItem="PG6-Rc-rMv" secondAttribute="trailing" constant="16" id="bF9-Vg-VjP"/>
-                            <constraint firstItem="rPp-8i-Y9Z" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="dkg-zx-wTC"/>
-                            <constraint firstItem="rPp-8i-Y9Z" firstAttribute="top" secondItem="WRk-FS-TtM" secondAttribute="bottom" constant="20" id="jyq-S6-tGz"/>
-                            <constraint firstItem="PG6-Rc-rMv" firstAttribute="top" secondItem="POW-x2-bZW" secondAttribute="top" constant="30" id="orW-so-oWC"/>
-                            <constraint firstItem="iui-2y-9Vp" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="zAg-6n-q9J"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="loI-bi-5V7">
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="tx9-23-W2c">
-                            <connections>
-                                <segue destination="YfF-re-vqV" kind="unwind" unwindAction="unwindForLogoutFor:" id="USc-aR-JlP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="winnerLabel" destination="rPp-8i-Y9Z" id="f2D-VW-HtE"/>
-                        <outletCollection property="dinerLabels" destination="7XR-0q-j12" collectionClass="NSMutableArray" id="wlQ-1c-tkH"/>
-                        <outletCollection property="dinerLabels" destination="l9Q-GD-BVL" collectionClass="NSMutableArray" id="hGB-cF-ae4"/>
-                        <outletCollection property="dinerLabels" destination="zd3-8n-OQI" collectionClass="NSMutableArray" id="pq2-Da-OiG"/>
-                        <outletCollection property="voteLabels" destination="gol-BL-bHZ" collectionClass="NSMutableArray" id="AXv-ji-oex"/>
-                        <outletCollection property="voteLabels" destination="xSc-dN-SUK" collectionClass="NSMutableArray" id="6tn-Iz-MfL"/>
-                        <outletCollection property="voteLabels" destination="cFw-H7-2vc" collectionClass="NSMutableArray" id="hTb-ht-q61"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H53-gX-Vwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="YfF-re-vqV" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4118" y="-342"/>
-        </scene>
-        <!--Diners Nav Controller-->
-        <scene sceneID="NtE-uN-2tQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ps-gL-nXj" userLabel="Diners Nav Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diners" image="menucard" catalog="system" id="eNb-YT-ayb"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Wj9-e1-vtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Wuz-b7-liQ" kind="relationship" relationship="rootViewController" id="56k-lI-UNP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FQp-Vx-7zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2595" y="355.98591549295776"/>
-        </scene>
-        <!--Diners View Controller-->
-        <scene sceneID="oDg-iP-cu3">
-            <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="Wuz-b7-liQ" userLabel="Diners View Controller" customClass="DinersTableViewController" customModule="DinerPoll" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rbg-V7-xAe">
+                <tableViewController id="td3-OA-fj1" userLabel="Logs View Controller" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="yyV-sX-Yc4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dinerID" id="2wF-N0-w38">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IGn-pu-qPl">
                                 <rect key="frame" x="0.0" y="50" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2wF-N0-w38" id="GVT-yl-V53">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IGn-pu-qPl" id="tl5-W7-eHW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Wuz-b7-liQ" id="KBD-gJ-sdq"/>
-                            <outlet property="delegate" destination="Wuz-b7-liQ" id="3YX-AC-4uY"/>
+                            <outlet property="dataSource" destination="td3-OA-fj1" id="a0q-2J-Nqz"/>
+                            <outlet property="delegate" destination="td3-OA-fj1" id="pQo-Ib-Z4Z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Diners List with Menu" id="pdl-TZ-Gbu">
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="Ya1-de-h8Q">
-                            <connections>
-                                <segue destination="3fw-kd-3G5" kind="unwind" unwindAction="unwindForLogoutFor:" id="Vaf-yl-8h8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Logs" image="list.bullet.clipboard.fill" catalog="system" id="vDc-Za-1Je"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="DER-70-vWV"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2uo-FG-30n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="3fw-kd-3G5" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYm-AA-eP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3360" y="356"/>
+            <point key="canvasLocation" x="4538" y="2016"/>
         </scene>
     </scenes>
     <resources>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="circle" catalog="system" width="128" height="123"/>
-        <image name="menucard" catalog="system" width="108" height="128"/>
-        <image name="questionmark.bubble.fill" catalog="system" width="128" height="110"/>
+        <image name="list.bullet.clipboard.fill" catalog="system" width="103" height="128"/>
+        <image name="menucard.fill" catalog="system" width="105" height="128"/>
+        <image name="questionmark.folder.fill" catalog="system" width="128" height="96"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

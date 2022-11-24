@@ -31,24 +31,22 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarVC = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBarVC.viewControllers else { return }
+        guard let navController = segue.destination as? UINavigationController else { return }
+        guard let tapBarVC = navController.topViewController as? UITabBarController else { return }
+        guard let viewControllers = tapBarVC.viewControllers else { return }
         
-        viewControllers.forEach {
+        for viewController in viewControllers {
             
-            if let navigationVC = $0 as? UINavigationController {
-                if let dinersVC = navigationVC.topViewController as? DinersTableViewController {
-                    dinersVC.diners = diners
-                } else if let pollVC = navigationVC.topViewController as? PollViewController {
-                    let currenLog = (Date(), currentUser.name, "N/A")
-                    voteLog.logs.append(currenLog)
-                    pollVC.currentUser = currentUser
-                    pollVC.dinersForPoll = dinersForPoll
-                    pollVC.voteResult = voteResult
-                    pollVC.voteLog = voteLog
-                }
+            if let dinersVC = viewController as? DinersTableViewController {
+                dinersVC.diners = diners
+            } else if let pollVC = viewController as? PollViewController {
+                let currenLog = (Date(), currentUser.name, "N/A")
+                voteLog.logs.append(currenLog)
+                pollVC.currentUser = currentUser
+                pollVC.dinersForPoll = dinersForPoll
+                pollVC.voteResult = voteResult
+                pollVC.voteLog = voteLog
             }
-            
         }
     }
     
