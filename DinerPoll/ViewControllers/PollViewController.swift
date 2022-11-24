@@ -41,7 +41,7 @@ class PollViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let afterVoteVC = segue.destination as? AfterVoteViewController else { return }
+        guard let afterVoteVC = segue.destination as? ResultsViewController else { return }
         afterVoteVC.voteResult = voteResult
     }
     

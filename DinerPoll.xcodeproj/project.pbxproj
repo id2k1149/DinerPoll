@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		503F992D292E552500060499 /* VoteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F992C292E552500060499 /* VoteResult.swift */; };
-		503F992F292E73B400060499 /* AfterVoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F992E292E73B400060499 /* AfterVoteViewController.swift */; };
+		503F992F292E73B400060499 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F992E292E73B400060499 /* ResultsViewController.swift */; };
 		506B92B6292AE85A00FF45DA /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B92B5292AE85A00FF45DA /* PollViewController.swift */; };
 		509E928F292D27420069205F /* VoteLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E928E292D27420069205F /* VoteLog.swift */; };
 		50D49453292BC65E00254AAE /* DinersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D49452292BC65E00254AAE /* DinersTableViewController.swift */; };
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		503F992C292E552500060499 /* VoteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResult.swift; sourceTree = "<group>"; };
-		503F992E292E73B400060499 /* AfterVoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterVoteViewController.swift; sourceTree = "<group>"; };
+		503F992E292E73B400060499 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		506B92B5292AE85A00FF45DA /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		509E928E292D27420069205F /* VoteLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteLog.swift; sourceTree = "<group>"; };
 		50D49452292BC65E00254AAE /* DinersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersTableViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				50D792832926A91C00ED9045 /* LoginViewController.swift */,
 				506B92B5292AE85A00FF45DA /* PollViewController.swift */,
-				503F992E292E73B400060499 /* AfterVoteViewController.swift */,
+				503F992E292E73B400060499 /* ResultsViewController.swift */,
 				50D49452292BC65E00254AAE /* DinersTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -216,7 +216,7 @@
 				50D792802926A91C00ED9045 /* AppDelegate.swift in Sources */,
 				50EE1BDC292A82A0004F0906 /* DataSource.swift in Sources */,
 				50D792822926A91C00ED9045 /* SceneDelegate.swift in Sources */,
-				503F992F292E73B400060499 /* AfterVoteViewController.swift in Sources */,
+				503F992F292E73B400060499 /* ResultsViewController.swift in Sources */,
 				50EC516A292C5BF7007985B3 /* Answer.swift in Sources */,
 				50D49453292BC65E00254AAE /* DinersTableViewController.swift in Sources */,
 				506B92B6292AE85A00FF45DA /* PollViewController.swift in Sources */,

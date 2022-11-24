@@ -46,6 +46,8 @@ class LoginViewController: UIViewController {
                 pollVC.dinersForPoll = dinersForPoll
                 pollVC.voteResult = voteResult
                 pollVC.voteLog = voteLog
+            } else if let resultsVC = viewController as? ResultsViewController {
+                resultsVC.voteResult = voteResult
             }
         }
     }
@@ -61,7 +63,7 @@ class LoginViewController: UIViewController {
         for index in 0..<users.count {
             if users[index].name == userNameTF.text && users[index].password == passwordTF.text {
                 currentUser = User(name: users[index].name, password: users[index].password)
-                performSegue(withIdentifier: "tabBarVC", sender: nil)
+                performSegue(withIdentifier: "NavControllerID", sender: nil)
             }
         }
         

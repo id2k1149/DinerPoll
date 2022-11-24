@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AfterVoteViewController: UIViewController {
+class ResultsViewController: UIViewController {
     
     //MARK: @IBOutlet
     @IBOutlet var dinerLabels: [UILabel]!
@@ -28,7 +28,7 @@ class AfterVoteViewController: UIViewController {
 }
 
 // MARK: - Private Methods
-extension AfterVoteViewController {
+extension ResultsViewController {
     
     private func updateUI() {
         
