@@ -33,11 +33,7 @@ class PollViewController: UIViewController {
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dinersForPoll.forEach { diner in
-            print(diner.name)
-            
-        }
+
         updateUI()
     }
     
@@ -147,7 +143,6 @@ extension PollViewController {
         
         for (label, diner) in zip(dinersLabels, dinersForPoll) {
             label.text = "\(diner.name)                   MENU:"
-            print(diner.name)
         }
         
         for (label, diner) in zip(menuCollection, dinersForPoll) {

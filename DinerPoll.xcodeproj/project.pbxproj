@@ -23,6 +23,7 @@
 		50EE1BDC292A82A0004F0906 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BDB292A82A0004F0906 /* DataSource.swift */; };
 		50EE1BDE292A8396004F0906 /* Diner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BDD292A8396004F0906 /* Diner.swift */; };
 		50EE1BE6292AA96E004F0906 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE1BE5292AA96D004F0906 /* User.swift */; };
+		50F2AD72292FFC480022BBFE /* LogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2AD71292FFC480022BBFE /* LogsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		50EE1BDB292A82A0004F0906 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		50EE1BDD292A8396004F0906 /* Diner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diner.swift; sourceTree = "<group>"; };
 		50EE1BE5292AA96D004F0906 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		50F2AD71292FFC480022BBFE /* LogsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				506B92B5292AE85A00FF45DA /* PollViewController.swift */,
 				503F992E292E73B400060499 /* ResultsViewController.swift */,
 				50D49452292BC65E00254AAE /* DinersTableViewController.swift */,
+				50F2AD71292FFC480022BBFE /* LogsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F2AD72292FFC480022BBFE /* LogsTableViewController.swift in Sources */,
 				50EE1BDE292A8396004F0906 /* Diner.swift in Sources */,
 				50D792842926A91C00ED9045 /* LoginViewController.swift in Sources */,
 				50EE1BE6292AA96E004F0906 /* User.swift in Sources */,
