@@ -376,18 +376,18 @@
                         <outlet property="questionLabel" destination="tBi-Zv-Fa5" id="yd1-MN-KMF"/>
                         <outlet property="questionStack" destination="F3s-dj-BGI" id="ZqC-dg-ezM"/>
                         <outlet property="voteAgainStack" destination="eLP-zJ-fW8" id="Jdo-Hr-hv7"/>
-                        <outletCollection property="menuCollection" destination="wHg-gW-YUl" collectionClass="NSMutableArray" id="TzY-Pg-a9U"/>
-                        <outletCollection property="radioButtons" destination="4bV-RI-UgM" collectionClass="NSMutableArray" id="TMR-ID-tWu"/>
-                        <outletCollection property="menuCollection" destination="mo0-wR-mhy" collectionClass="NSMutableArray" id="ENk-q2-NSW"/>
-                        <outletCollection property="dinersLabels" destination="E3a-Mm-0qC" collectionClass="NSMutableArray" id="aOe-h9-T4J"/>
-                        <outletCollection property="radioButtons" destination="1Ey-5x-4Ju" collectionClass="NSMutableArray" id="bXq-GV-nU5"/>
-                        <outletCollection property="priceCollection" destination="4on-hM-2uz" collectionClass="NSMutableArray" id="R1B-zp-1M2"/>
-                        <outletCollection property="radioButtons" destination="ttP-SL-3zr" collectionClass="NSMutableArray" id="HS3-8O-hAX"/>
-                        <outletCollection property="menuCollection" destination="if1-E0-BGV" collectionClass="NSMutableArray" id="uF4-i9-0Bs"/>
-                        <outletCollection property="priceCollection" destination="Wml-Pe-Fcl" collectionClass="NSMutableArray" id="gbd-ub-YgB"/>
-                        <outletCollection property="dinersLabels" destination="alD-t2-Dud" collectionClass="NSMutableArray" id="DKq-gS-MBL"/>
-                        <outletCollection property="dinersLabels" destination="h6t-F0-jFf" collectionClass="NSMutableArray" id="Bpz-Jd-tMY"/>
-                        <outletCollection property="priceCollection" destination="Mad-9U-N6i" collectionClass="NSMutableArray" id="RIz-8i-omF"/>
+                        <outletCollection property="radioButtons" destination="ttP-SL-3zr" collectionClass="NSMutableArray" id="0O7-nZ-5nA"/>
+                        <outletCollection property="radioButtons" destination="4bV-RI-UgM" collectionClass="NSMutableArray" id="HFv-U7-Rar"/>
+                        <outletCollection property="radioButtons" destination="1Ey-5x-4Ju" collectionClass="NSMutableArray" id="v6o-90-d2d"/>
+                        <outletCollection property="priceCollection" destination="Wml-Pe-Fcl" collectionClass="NSMutableArray" id="aXD-36-jZ8"/>
+                        <outletCollection property="priceCollection" destination="4on-hM-2uz" collectionClass="NSMutableArray" id="IXj-H2-dc4"/>
+                        <outletCollection property="priceCollection" destination="Mad-9U-N6i" collectionClass="NSMutableArray" id="r6I-tP-OU8"/>
+                        <outletCollection property="dinersLabels" destination="E3a-Mm-0qC" collectionClass="NSMutableArray" id="Tks-96-BY7"/>
+                        <outletCollection property="dinersLabels" destination="h6t-F0-jFf" collectionClass="NSMutableArray" id="Tct-3X-3iU"/>
+                        <outletCollection property="dinersLabels" destination="alD-t2-Dud" collectionClass="NSMutableArray" id="7Uq-Dm-od9"/>
+                        <outletCollection property="menuCollection" destination="mo0-wR-mhy" collectionClass="NSMutableArray" id="GRe-Yx-zny"/>
+                        <outletCollection property="menuCollection" destination="wHg-gW-YUl" collectionClass="NSMutableArray" id="nhL-dE-DFf"/>
+                        <outletCollection property="menuCollection" destination="if1-E0-BGV" collectionClass="NSMutableArray" id="hxg-W8-5Nv"/>
                         <segue destination="L7q-rt-djn" kind="show" identifier="afterVoteID" id="8EL-Hq-kRm"/>
                     </connections>
                 </viewController>
@@ -467,6 +467,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT WINNER IS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-FS-TtM">
+                                <rect key="frame" x="80" y="430" width="215.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPp-8i-Y9Z">
+                                <rect key="frame" x="162" y="476.5" width="51" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="POW-x2-bZW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -475,8 +487,12 @@
                             <constraint firstItem="iui-2y-9Vp" firstAttribute="top" secondItem="MXe-zN-4zP" secondAttribute="bottom" constant="60" id="BfE-dy-hmQ"/>
                             <constraint firstItem="PG6-Rc-rMv" firstAttribute="leading" secondItem="POW-x2-bZW" secondAttribute="leading" constant="16" id="DQN-hZ-TjA"/>
                             <constraint firstItem="MXe-zN-4zP" firstAttribute="leading" secondItem="POW-x2-bZW" secondAttribute="leading" constant="16" id="DfG-vh-6bd"/>
+                            <constraint firstItem="WRk-FS-TtM" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="Q40-3g-mb8"/>
+                            <constraint firstItem="WRk-FS-TtM" firstAttribute="top" secondItem="iui-2y-9Vp" secondAttribute="bottom" constant="30" id="QrY-uR-wyG"/>
                             <constraint firstItem="POW-x2-bZW" firstAttribute="trailing" secondItem="MXe-zN-4zP" secondAttribute="trailing" constant="16" id="aA0-Yq-BZM"/>
                             <constraint firstItem="POW-x2-bZW" firstAttribute="trailing" secondItem="PG6-Rc-rMv" secondAttribute="trailing" constant="16" id="bF9-Vg-VjP"/>
+                            <constraint firstItem="rPp-8i-Y9Z" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="dkg-zx-wTC"/>
+                            <constraint firstItem="rPp-8i-Y9Z" firstAttribute="top" secondItem="WRk-FS-TtM" secondAttribute="bottom" constant="20" id="jyq-S6-tGz"/>
                             <constraint firstItem="PG6-Rc-rMv" firstAttribute="top" secondItem="POW-x2-bZW" secondAttribute="top" constant="30" id="orW-so-oWC"/>
                             <constraint firstItem="iui-2y-9Vp" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="zAg-6n-q9J"/>
                         </constraints>
@@ -489,6 +505,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="winnerLabel" destination="rPp-8i-Y9Z" id="f2D-VW-HtE"/>
                         <outletCollection property="dinerLabels" destination="7XR-0q-j12" collectionClass="NSMutableArray" id="wlQ-1c-tkH"/>
                         <outletCollection property="dinerLabels" destination="l9Q-GD-BVL" collectionClass="NSMutableArray" id="hGB-cF-ae4"/>
                         <outletCollection property="dinerLabels" destination="zd3-8n-OQI" collectionClass="NSMutableArray" id="pq2-Da-OiG"/>

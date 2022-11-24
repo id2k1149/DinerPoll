@@ -12,6 +12,7 @@ class AfterVoteViewController: UIViewController {
     //MARK: @IBOutlet
     @IBOutlet var dinerLabels: [UILabel]!
     @IBOutlet var voteLabels: [UILabel]!
+    @IBOutlet var winnerLabel: UILabel!
     
     //MARK: vars
     var voteResult: VoteResult!
@@ -32,8 +33,14 @@ extension AfterVoteViewController {
     private func updateUI() {
         
         for (label, diner) in zip(dinerLabels, voteResult.answers.keys) {
-            label.text = "\(diner.name)"
+            label.text = "\(diner)"
         }
+        
+        for (label, votes) in zip(voteLabels, voteResult.answers.values) {
+            label.text = "\(votes)"
+        }
+        
+        winnerLabel.text = voteResult.winer
         
     }
 }

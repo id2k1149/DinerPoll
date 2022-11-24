@@ -32,6 +32,11 @@ class PollViewController: UIViewController {
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dinersForPoll.forEach { diner in
+            print(diner.name)
+            
+        }
         updateUI()
     }
     
@@ -50,6 +55,7 @@ class PollViewController: UIViewController {
         
         guard let buttonIndex = radioButtons.firstIndex(of: sender) else { return }
         answerChoosen = dinersForPoll[buttonIndex].name
+        print(answerChoosen as Any)
         guard let circleFill = UIImage(systemName: "circle.fill") else { return }
         sender.setImage(circleFill, for: .normal)
     }
@@ -117,6 +123,7 @@ extension PollViewController {
         
         for (label, diner) in zip(dinersLabels, dinersForPoll) {
             label.text = "\(diner.name)                   MENU:"
+            print(diner.name)
         }
         
         for (label, diner) in zip(menuCollection, dinersForPoll) {
