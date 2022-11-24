@@ -208,11 +208,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="menucard.fill" catalog="system" id="JJE-bx-RdV"/>
                     <navigationItem key="navigationItem" id="loI-bi-5V7">
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="tx9-23-W2c">
-                            <connections>
-                                <segue destination="YfF-re-vqV" kind="unwind" unwindAction="unwindForLogoutFor:" id="USc-aR-JlP"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="tx9-23-W2c"/>
                     </navigationItem>
                     <connections>
                         <outlet property="winnerLabel" destination="rPp-8i-Y9Z" id="f2D-VW-HtE"/>
@@ -225,7 +221,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H53-gX-Vwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="YfF-re-vqV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2890" y="2002"/>
         </scene>
@@ -254,15 +249,10 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="All Diners" image="book.fill" catalog="system" id="8Cf-Mv-MNj"/>
                     <navigationItem key="navigationItem" title="Diners List with Menu" id="pdl-TZ-Gbu">
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="Ya1-de-h8Q">
-                            <connections>
-                                <segue destination="3fw-kd-3G5" kind="unwind" identifier="" unwindAction="unwindForLogoutFor:" id="Vaf-yl-8h8"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="Ya1-de-h8Q"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uo-FG-30n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="3fw-kd-3G5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3735" y="2015"/>
         </scene>
@@ -522,11 +512,7 @@
                     <tabBarItem key="tabBarItem" title="Vote" image="checkmark.circle.fill" catalog="system" id="Vlu-Zl-n3L"/>
                     <navigationItem key="navigationItem" title="Today's Poll" id="Xpn-P7-t2g">
                         <barButtonItem key="backBarButtonItem" title="back" id="BeY-6J-meP"/>
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="Bnf-qw-LQk">
-                            <connections>
-                                <segue destination="Wgg-rr-1lA" kind="unwind" unwindAction="unwindForLogoutFor:" id="Uls-Ja-Z1F"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="Bnf-qw-LQk"/>
                     </navigationItem>
                     <connections>
                         <outlet property="questionLabel" destination="tBi-Zv-Fa5" id="yd1-MN-KMF"/>
@@ -548,7 +534,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Wgg-rr-1lA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1441" y="1973"/>
         </scene>
