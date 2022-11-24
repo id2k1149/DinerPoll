@@ -35,6 +35,11 @@ class PollViewController: UIViewController {
         updateUI()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let afterVoteVC = segue.destination as? AfterVoteViewController else { return }
+        afterVoteVC.voteResult = voteResult
+    }
+    
     // MARK: @IBAction
     @IBAction func radioButtonTapped(_ sender: UIButton) {
         
@@ -66,6 +71,8 @@ class PollViewController: UIViewController {
             print(log.0, log.1, log.2)
         }
         
+        performSegue(withIdentifier: "afterVoteID", sender: nil)
+        
     }
     
 }
@@ -74,7 +81,11 @@ class PollViewController: UIViewController {
 extension PollViewController {
     
     private func updateUI() {
-        // hide stacks
+        radioButtons.forEach { button in
+            guard let circle = UIImage(systemName: "circle") else { return }
+            button.setImage(circle, for: .normal)
+        }
+        
         for stackView in [questionStack, voteAgainStack] {
             stackView?.isHidden = true
         }
