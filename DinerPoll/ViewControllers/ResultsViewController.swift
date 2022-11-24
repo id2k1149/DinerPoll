@@ -40,7 +40,7 @@ extension ResultsViewController {
             label.text = "\(votes)"
         }
         
-        winnerLabel.text = voteResult.winer
+        winnerLabel.text = voteResult.winner
         
     }
 }

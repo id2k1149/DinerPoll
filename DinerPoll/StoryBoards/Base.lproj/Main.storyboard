@@ -519,7 +519,7 @@
                             <constraint firstItem="eLP-zJ-fW8" firstAttribute="centerY" secondItem="VE1-Sp-nKR" secondAttribute="centerY" id="ln5-eu-bE1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Vote" image="questionmark.folder.fill" catalog="system" id="Vlu-Zl-n3L"/>
+                    <tabBarItem key="tabBarItem" title="Vote" image="checkmark.circle.fill" catalog="system" id="Vlu-Zl-n3L"/>
                     <navigationItem key="navigationItem" title="Today's Poll" id="Xpn-P7-t2g">
                         <barButtonItem key="backBarButtonItem" title="back" id="BeY-6J-meP"/>
                         <barButtonItem key="rightBarButtonItem" title="logout" id="Bnf-qw-LQk">
@@ -588,10 +588,10 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="103" height="128"/>
         <image name="menucard.fill" catalog="system" width="105" height="128"/>
-        <image name="questionmark.folder.fill" catalog="system" width="128" height="96"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
