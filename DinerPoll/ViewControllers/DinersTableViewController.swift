@@ -23,17 +23,15 @@ class DinersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         diners[section].menu.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dinerID", for: indexPath)
-
-        let menu = diners[indexPath.section].menu
         
         var content = cell.defaultContentConfiguration()
         
-        for index in 1...diners[indexPath.section].menu.count {
-            if indexPath.item == index - 1 {
-                content.text = "\(index). "
+        for (index, menu) in diners[indexPath.section].menu.enumerated() {
+            if indexPath.item == index {
+                content.text = "\(index + 1). \(menu.key) for \(menu.value)"
             }
         }
 
