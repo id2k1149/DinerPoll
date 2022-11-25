@@ -33,7 +33,7 @@ extension ResultsViewController {
     private func updateUI() {
         
         for (label, diner) in zip(dinerLabels, voteResult.answers.keys) {
-            label.text = "\(diner)"
+            label.text = "Diner \"\(diner)\""
         }
         
         for (label, votes) in zip(voteLabels, voteResult.answers.values) {

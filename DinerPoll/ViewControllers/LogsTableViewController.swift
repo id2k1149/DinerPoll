@@ -25,7 +25,13 @@ class LogsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "logsID", for: indexPath)
         let log = VoteLog.shared.logs[indexPath.row]
         var content = cell.defaultContentConfiguration()
-        content.text = "\(log.0) \(log.1) \(log.2)"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-YYYY HH:mm"
+        let dateString = dateFormatter.string(from: log.0)
+
+
+        content.text = "\(dateString) \(log.1) \"\(log.2)\""
         cell.contentConfiguration = content
         return cell
     }

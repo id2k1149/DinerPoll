@@ -20,7 +20,7 @@ class DataStore {
     
     var diners: [Diner] {
         var diners = [Diner]()
-        var dinersNames = [
+        let dinersNames = [
             "Chang-Fisher",
             "Sheppard-Tucker",
             "Faulkner-Howard",
@@ -47,7 +47,7 @@ class DataStore {
         ]
         var randomDiners = dinersNames.shuffled()
         
-        var dishes = [
+        let dishes = [
             "Oven-Baked Basil",
             "Lime Quail",
             "Broasted Saffron",
@@ -67,7 +67,7 @@ class DataStore {
         
         for _ in 1...9 {
             
-            let dinerName = "Diner \"\(randomDiners[0])\""
+            let dinerName = "\(randomDiners[0])"
             randomDiners.removeFirst()
             
             var dishList = [String : String]()

@@ -149,13 +149,13 @@ extension PollViewController {
         questionLabel.text = question.title
         
         for (label, diner) in zip(dinersLabels, dinersForPoll) {
-            label.text = "\(diner.name)                   MENU:"
+            label.text = "\(diner.name)"
         }
         
         for (label, diner) in zip(menuCollection, dinersForPoll) {
             var menuText = ""
             for dish in diner.menu {
-                menuText += "\(dish.0) \n"
+                menuText += "\(dish.0)\n"
             }
             label.text = menuText
         }
@@ -163,7 +163,7 @@ extension PollViewController {
         for (label, diner) in zip(priceCollection, dinersForPoll) {
             var price = ""
             for dish in diner.menu {
-                price += "\(dish.1) \n"
+                price += "\(dish.1)\n"
             }
             label.text = price
         }
