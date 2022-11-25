@@ -482,6 +482,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="YES">
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="YesButtonTapped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="hK5-sY-RCR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXd-ag-HM8">
                                                 <rect key="frame" x="130" y="0.0" width="55" height="34.5"/>

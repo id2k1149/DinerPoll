@@ -88,6 +88,25 @@ class PollViewController: UIViewController {
         performSegue(withIdentifier: "resultsID", sender: nil)
     }
     
+    
+    @IBAction func YesButtonTapped() {
+        let sortedLogs = VoteLog.shared.logs.sorted {
+            $0.0 > $1.0
+        }
+        
+        var userLastAnswer = ""
+        for log in sortedLogs {
+            if log.1 == currentUser.name {
+                userLastAnswer = log.2
+                break
+            }
+        }
+        
+        guard let currentVotes = voteResult.answers[userLastAnswer] else { return }
+        voteResult.answers.updateValue(currentVotes - 1, forKey: userLastAnswer)
+        showQuestions()
+    }
+    
 }
 
 // MARK: - Private Methods
@@ -104,7 +123,7 @@ extension PollViewController {
         }
         
         if VoteLog.shared.logs.isEmpty {
-            showQuestion()
+            showQuestions()
         } else {
             for log in VoteLog.shared.logs {
                 if log.1 == currentUser.name {
@@ -114,7 +133,7 @@ extension PollViewController {
             }
         }
         
-        showQuestion()
+        showQuestions()
     }
     
     private func showVoteAgain() {
@@ -122,7 +141,7 @@ extension PollViewController {
         voteAgainStack.isHidden = false
     }
     
-    private func showQuestion() {
+    private func showQuestions() {
         questionStack.isHidden = false
         voteAgainStack.isHidden = true
         
