@@ -10,9 +10,8 @@ class DataStore {
     
     var users: [User] {
         var users = [User]()
-        let randomMax = Int.random(in: 4...5)
         
-        for index in 1...randomMax {
+        for index in 1...5 {
             users.append(User(name: "User\(index)", password: "pass"))
         }
         return users
@@ -20,19 +19,63 @@ class DataStore {
     
     var diners: [Diner] {
         var diners = [Diner]()
-        var randomNumbers = Array(1...100).shuffled()
+        let dinersNames = [
+            "Chang-Fisher",
+            "Sheppard-Tucker",
+            "Faulkner-Howard",
+            "Wagner",
+            "Campos",
+            "Handmade Graph",
+            "Astonishing Studio",
+            "Eclipse Rises",
+            "Pane In The Glass",
+            "Go Figure",
+            "Mosaics",
+            "Long Last Craft",
+            "The Empty Plate",
+            "The Agreeing Cart",
+            "Poetic Craftiness Co",
+            "Hipster",
+            "The Trendy",
+            "Jaguar Ventures",
+            "The Dry Pagoda",
+            "The Sleek Apple",
+            "Chest Cheese",
+            "The Fast Spoon",
+            "Oceans Clean Up"
+        ]
+        var randomDiners = dinersNames.shuffled()
+        
+        let dishes = [
+            "Oven-Baked Basil",
+            "Lime Quail",
+            "Broasted Saffron",
+            "Shallot Turkey",
+            "Poached Cucumber",
+            "Lime Lollies",
+            "Seared Chili Fish",
+            "Cured Garlic",
+            "Rosemary Spring Vegetables",
+            "Baked Curry of Chestnuts",
+            "Mandarin Ice",
+            "Caramel",
+            "Waffles",
+            "Jelly",
+            "Papaya Candy"
+        ]
         
         for _ in 1...9 {
             
-            let dinerName = "Diner #\(randomNumbers[0])"
-            randomNumbers.removeFirst()
+            let dinerName = "\(randomDiners[0])"
+            randomDiners.removeFirst()
             
             var dishList = [String : String]()
             let menuLength = Int.random(in: 2...4)
+            var randomDishes = dishes.shuffled()
             
             for _ in 1...menuLength {
-                let dishName = "Dish_\(randomNumbers[0])"
-                randomNumbers.removeFirst()
+                let dishName = "\(randomDishes[0])"
+                randomDishes.removeFirst()
                 let dishPrice = "$\(Int.random(in: 1...20)).00"
                 dishList.updateValue(dishPrice, forKey: dishName)
             }

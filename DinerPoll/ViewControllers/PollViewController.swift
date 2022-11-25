@@ -14,35 +14,50 @@ class PollViewController: UIViewController {
     @IBOutlet var voteAgainStack: UIStackView!
     
     @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var voteButton: UIButton!
     
     @IBOutlet var dinersLabels: [UILabel]!
     @IBOutlet var menuCollection: [UILabel]!
     @IBOutlet var priceCollection: [UILabel]!
+    @IBOutlet var yesNoCollection: [UIButton]!
     
     @IBOutlet var radioButtons: [UIButton]!
     
     // MARK: privates
     private var answerChoosen: String!
     
+    // MARK: vars
+    var diners: [Diner]!
     var dinersForPoll: [Diner]!
     var currentUser: User!
     var voteResult: VoteResult!
-    var voteLog: VoteLog!
 
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dinersForPoll.forEach { diner in
-            print(diner.name)
-            
-        }
+        voteButton.layer.cornerRadius = 15
         updateUI()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let afterVoteVC = segue.destination as? AfterVoteViewController else { return }
-        afterVoteVC.voteResult = voteResult
+        
+        guard let navController = segue.destination as? UINavigationController else { return }
+        guard let tapBarVC = navController.topViewController as? UITabBarController else { return }
+        guard let viewControllers = tapBarVC.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            if let dinersVC = viewController as? DinersTableViewController {
+                dinersVC.diners = diners
+            } else if let pollVC = viewController as? PollViewController {
+                pollVC.currentUser = currentUser
+                pollVC.diners = diners
+                pollVC.dinersForPoll = dinersForPoll
+                pollVC.voteResult = voteResult
+            } else if let resultsVC = viewController as? ResultsViewController {
+                resultsVC.voteResult = voteResult
+            }
+        }
     }
     
     // MARK: @IBAction
@@ -55,7 +70,6 @@ class PollViewController: UIViewController {
         
         guard let buttonIndex = radioButtons.firstIndex(of: sender) else { return }
         answerChoosen = dinersForPoll[buttonIndex].name
-        print(answerChoosen as Any)
         guard let circleFill = UIImage(systemName: "circle.fill") else { return }
         sender.setImage(circleFill, for: .normal)
     }
@@ -68,19 +82,34 @@ class PollViewController: UIViewController {
         
         guard let currentVotes = voteResult.answers[answerChoosen] else  { return }
         voteResult.answers.updateValue(currentVotes + 1, forKey: answerChoosen)
-        let logCount = voteLog.logs.count
-        voteLog.logs[logCount - 1].0 = Date()
-        voteLog.logs[logCount - 1].2 = answerChoosen
-       
-        print(voteResult.answers)
-        voteLog.logs.forEach {log in
-            print(log.0, log.1, log.2)
-        }
+        VoteLog.shared.logs.append((Date(), currentUser.name, answerChoosen))
         
-        performSegue(withIdentifier: "afterVoteID", sender: nil)
+        performSegue(withIdentifier: "resultsID", sender: nil)
         
     }
     
+    @IBAction func NoButtonTapped() {
+        performSegue(withIdentifier: "resultsID", sender: nil)
+    }
+    
+    
+    @IBAction func YesButtonTapped() {
+        let sortedLogs = VoteLog.shared.logs.sorted {
+            $0.0 > $1.0
+        }
+        
+        var userLastAnswer = ""
+        for log in sortedLogs {
+            if log.1 == currentUser.name {
+                userLastAnswer = log.2
+                break
+            }
+        }
+        
+        guard let currentVotes = voteResult.answers[userLastAnswer] else { return }
+        voteResult.answers.updateValue(currentVotes - 1, forKey: userLastAnswer)
+        showQuestions()
+    }
 }
 
 // MARK: - Private Methods
@@ -96,25 +125,30 @@ extension PollViewController {
             stackView?.isHidden = true
         }
         
-        let sortedVoteLog = voteLog.logs.sorted {
-            $0.0 > $1.0
-        }
-        
-        sortedVoteLog.forEach {log in
-            if log.1 == currentUser.name && log.2 != "N/A" {
-                showVoteAgain()
-            } else {
-                showQuestion()
+        if VoteLog.shared.logs.isEmpty {
+            showQuestions()
+        } else {
+            for log in VoteLog.shared.logs {
+                if log.1 == currentUser.name {
+                    showVoteAgain()
+                    return
+                }
             }
         }
+        
+        showQuestions()
     }
     
     private func showVoteAgain() {
         questionStack.isHidden = true
         voteAgainStack.isHidden = false
+        
+        yesNoCollection.forEach { button in
+            button.layer.cornerRadius = 15
+        }
     }
     
-    private func showQuestion() {
+    private func showQuestions() {
         questionStack.isHidden = false
         voteAgainStack.isHidden = true
         
@@ -122,14 +156,13 @@ extension PollViewController {
         questionLabel.text = question.title
         
         for (label, diner) in zip(dinersLabels, dinersForPoll) {
-            label.text = "\(diner.name)                   MENU:"
-            print(diner.name)
+            label.text = "\(diner.name)"
         }
         
         for (label, diner) in zip(menuCollection, dinersForPoll) {
             var menuText = ""
             for dish in diner.menu {
-                menuText += "\(dish.0) \n"
+                menuText += "\(dish.0)\n"
             }
             label.text = menuText
         }
@@ -137,11 +170,10 @@ extension PollViewController {
         for (label, diner) in zip(priceCollection, dinersForPoll) {
             var price = ""
             for dish in diner.menu {
-                price += "\(dish.1) \n"
+                price += "\(dish.1)\n"
             }
             label.text = price
         }
-        
     }
     
     private func showAlert(title: String, message: String) {

@@ -5,7 +5,7 @@
 //  Created by Max Franz Immelmann on 11/20/22.
 //
 
-class User {
+final class User {
     let name: String
     let password: String
     

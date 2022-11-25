@@ -20,35 +20,32 @@ class LoginViewController: UIViewController {
     private var currentUser: User!
     private var dinersForPoll: [Diner]!
     private var voteResult = VoteResult.shared
-    private var voteLog = VoteLog.shared
     
     //MARK: override functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.layer.cornerRadius = 10
+        loginButton.layer.cornerRadius = 15
         setInitialData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarVC = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBarVC.viewControllers else { return }
+        guard let navController = segue.destination as? UINavigationController else { return }
+        guard let tapBarVC = navController.topViewController as? UITabBarController else { return }
+        guard let viewControllers = tapBarVC.viewControllers else { return }
         
-        viewControllers.forEach {
+        for viewController in viewControllers {
             
-            if let navigationVC = $0 as? UINavigationController {
-                if let dinersVC = navigationVC.topViewController as? DinersTableViewController {
-                    dinersVC.diners = diners
-                } else if let pollVC = navigationVC.topViewController as? PollViewController {
-                    let currenLog = (Date(), currentUser.name, "N/A")
-                    voteLog.logs.append(currenLog)
-                    pollVC.currentUser = currentUser
-                    pollVC.dinersForPoll = dinersForPoll
-                    pollVC.voteResult = voteResult
-                    pollVC.voteLog = voteLog
-                }
+            if let dinersVC = viewController as? DinersTableViewController {
+                dinersVC.diners = diners
+            } else if let pollVC = viewController as? PollViewController {
+                pollVC.currentUser = currentUser
+                pollVC.diners = diners
+                pollVC.dinersForPoll = dinersForPoll
+                pollVC.voteResult = voteResult
+            } else if let resultsVC = viewController as? ResultsViewController {
+                resultsVC.voteResult = voteResult
             }
-            
         }
     }
     
@@ -63,13 +60,21 @@ class LoginViewController: UIViewController {
         for index in 0..<users.count {
             if users[index].name == userNameTF.text && users[index].password == passwordTF.text {
                 currentUser = User(name: users[index].name, password: users[index].password)
-                performSegue(withIdentifier: "tabBarVC", sender: nil)
+                performSegue(withIdentifier: "NavControllerID", sender: nil)
             }
         }
         
         showAlert(
             title: "Invalid login or password",
             message: "Please, enter correct login and password",
+            textField: passwordTF
+        )
+    }
+    
+    @IBAction func forgotButtonTapped() {
+        showAlert(
+            title: "Please try any of these:",
+            message: "User1 ... User5 with \"pass\"",
             textField: passwordTF
         )
     }
@@ -98,7 +103,5 @@ extension LoginViewController {
         dinersForPoll.forEach { diner in
             voteResult.answers.updateValue(0, forKey: diner.name)
         }
-        
     }
-    
 }

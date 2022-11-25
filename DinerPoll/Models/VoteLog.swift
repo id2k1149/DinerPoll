@@ -8,11 +8,10 @@
 import Foundation
 
 // Singleton
-class VoteLog {
+final class VoteLog {
     static var shared = VoteLog()
     
     var logs = [(Date, String, String)]()
     
     private init() {}
-    
 }

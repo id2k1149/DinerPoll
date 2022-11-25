@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AfterVoteViewController: UIViewController {
+class ResultsViewController: UIViewController {
     
     //MARK: @IBOutlet
     @IBOutlet var dinerLabels: [UILabel]!
@@ -21,26 +21,31 @@ class AfterVoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.hidesBackButton = true
         updateUI()
     }
-
 }
 
 // MARK: - Private Methods
-extension AfterVoteViewController {
+extension ResultsViewController {
     
     private func updateUI() {
         
         for (label, diner) in zip(dinerLabels, voteResult.answers.keys) {
-            label.text = "\(diner)"
+            label.text = "Diner \"\(diner)\""
         }
         
         for (label, votes) in zip(voteLabels, voteResult.answers.values) {
             label.text = "\(votes)"
         }
         
-        winnerLabel.text = voteResult.winer
-        
+        if voteResult.winner != "No winner" {
+            winnerLabel.backgroundColor = .systemBlue
+            winnerLabel.font = winnerLabel.font.withSize(40)
+            winnerLabel.layer.masksToBounds = true
+            winnerLabel.layer.cornerRadius = 15
+            winnerLabel.sizeToFit()
+            winnerLabel.textColor = .white
+        }
+        winnerLabel.text = voteResult.winner
     }
 }

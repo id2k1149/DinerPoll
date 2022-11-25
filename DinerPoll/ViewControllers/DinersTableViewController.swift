@@ -9,6 +9,7 @@ import UIKit
 
 class DinersTableViewController: UITableViewController {
     
+    // MARK: var
     var diners: [Diner]!
     
     // MARK: - Table view data source
@@ -17,7 +18,7 @@ class DinersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        diners[section].name
+        "Diner \"\(diners[section].name)\""
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,7 +27,6 @@ class DinersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dinerID", for: indexPath)
-        
         var content = cell.defaultContentConfiguration()
         
         for (index, menu) in diners[indexPath.section].menu.enumerated() {
@@ -36,7 +36,6 @@ class DinersTableViewController: UITableViewController {
         }
 
         cell.contentConfiguration = content
-
         return cell
     }
 }
