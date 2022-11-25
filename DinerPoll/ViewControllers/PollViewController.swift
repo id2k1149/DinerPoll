@@ -28,17 +28,11 @@ class PollViewController: UIViewController {
     var dinersForPoll: [Diner]!
     var currentUser: User!
     var voteResult: VoteResult!
-//    var logList = VoteLog.shared.logs
 
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("***** viewDidLoad() ******")
-        VoteLog.shared.logs.forEach { log in
-            print(log)
-        }
-
         updateUI()
     }
     
@@ -52,13 +46,10 @@ class PollViewController: UIViewController {
             if let dinersVC = viewController as? DinersTableViewController {
                 dinersVC.diners = diners
             } else if let pollVC = viewController as? PollViewController {
-//                let currenLog = (Date(), currentUser.name, "N/A")
-//                voteLog.append(currenLog)
                 pollVC.currentUser = currentUser
                 pollVC.diners = diners
                 pollVC.dinersForPoll = dinersForPoll
                 pollVC.voteResult = voteResult
-//                pollVC.voteLog = voteLog
             } else if let resultsVC = viewController as? ResultsViewController {
                 resultsVC.voteResult = voteResult
             }
@@ -75,7 +66,6 @@ class PollViewController: UIViewController {
         
         guard let buttonIndex = radioButtons.firstIndex(of: sender) else { return }
         answerChoosen = dinersForPoll[buttonIndex].name
-        print(answerChoosen as Any)
         guard let circleFill = UIImage(systemName: "circle.fill") else { return }
         sender.setImage(circleFill, for: .normal)
     }
@@ -88,26 +78,7 @@ class PollViewController: UIViewController {
         
         guard let currentVotes = voteResult.answers[answerChoosen] else  { return }
         voteResult.answers.updateValue(currentVotes + 1, forKey: answerChoosen)
-        
         VoteLog.shared.logs.append((Date(), currentUser.name, answerChoosen))
-//        let logCount = voteLog.count
-//        voteLog[logCount - 1].0 = Date()
-//        voteLog[logCount - 1].2 = answerChoosen
-       
-//        logList.forEach { log in
-//            print(log)
-//        }
-        
-//        print(voteResult.answers)
-        
-//        logList.forEach {log in
-//            print(log.0, log.1, log.2)
-//        }
-        
-        print("*** VoteLog.shared.logs ****")
-        VoteLog.shared.logs.forEach {log in
-            print(log.0, log.1, log.2)
-        }
         
         performSegue(withIdentifier: "resultsID", sender: nil)
         
@@ -132,34 +103,22 @@ extension PollViewController {
             stackView?.isHidden = true
         }
         
-//        let sortedVoteLog = VoteLog.shared.logs.sorted {
-//            $0.0 > $1.0
-//        }
-        
         if VoteLog.shared.logs.isEmpty {
             showQuestion()
         } else {
-            VoteLog.shared.logs.forEach {log in
-                print("log => \(log.1) \(currentUser.name) ")
-                
+            for log in VoteLog.shared.logs {
                 if log.1 == currentUser.name {
-                    print("got it")
                     showVoteAgain()
                     return
                 }
             }
-            
-            showQuestion()
-            
-            
         }
         
-//        showQuestion()
+        showQuestion()
     }
     
     private func showVoteAgain() {
-        print("** showVoteAgain **")
-//        questionStack.isHidden = true
+        questionStack.isHidden = true
         voteAgainStack.isHidden = false
     }
     

@@ -14,18 +14,10 @@ class LogsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("*** logsList ****")
-        VoteLog.shared.logs.forEach {log in
-            print(log.0, log.1, log.2)
-        }
-        
-        
-
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         VoteLog.shared.logs.count
     }
 
