@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     private var currentUser: User!
     private var dinersForPoll: [Diner]!
     private var voteResult = VoteResult.shared
-    private var voteLog = VoteLog.shared
+//    private var voteLog = VoteLog.shared
     
     //MARK: override functions
     override func viewDidLoad() {
@@ -40,13 +40,13 @@ class LoginViewController: UIViewController {
             if let dinersVC = viewController as? DinersTableViewController {
                 dinersVC.diners = diners
             } else if let pollVC = viewController as? PollViewController {
-                let currenLog = (Date(), currentUser.name, "N/A")
-                voteLog.logs.append(currenLog)
+//                let currenLog = (Date(), currentUser.name, "N/A")
+//                voteLog.logs.append(currenLog)
                 pollVC.currentUser = currentUser
                 pollVC.diners = diners
                 pollVC.dinersForPoll = dinersForPoll
                 pollVC.voteResult = voteResult
-                pollVC.voteLog = voteLog
+//                pollVC.voteLog = voteLog
             } else if let resultsVC = viewController as? ResultsViewController {
                 resultsVC.voteResult = voteResult
             }

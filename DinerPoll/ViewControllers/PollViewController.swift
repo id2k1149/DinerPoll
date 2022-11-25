@@ -28,11 +28,16 @@ class PollViewController: UIViewController {
     var dinersForPoll: [Diner]!
     var currentUser: User!
     var voteResult: VoteResult!
-    var voteLog: VoteLog!
+//    var logList = VoteLog.shared.logs
 
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("***** viewDidLoad() ******")
+        VoteLog.shared.logs.forEach { log in
+            print(log)
+        }
 
         updateUI()
     }
@@ -47,13 +52,13 @@ class PollViewController: UIViewController {
             if let dinersVC = viewController as? DinersTableViewController {
                 dinersVC.diners = diners
             } else if let pollVC = viewController as? PollViewController {
-                let currenLog = (Date(), currentUser.name, "N/A")
-                voteLog.logs.append(currenLog)
+//                let currenLog = (Date(), currentUser.name, "N/A")
+//                voteLog.append(currenLog)
                 pollVC.currentUser = currentUser
                 pollVC.diners = diners
                 pollVC.dinersForPoll = dinersForPoll
                 pollVC.voteResult = voteResult
-                pollVC.voteLog = voteLog
+//                pollVC.voteLog = voteLog
             } else if let resultsVC = viewController as? ResultsViewController {
                 resultsVC.voteResult = voteResult
             }
@@ -83,19 +88,30 @@ class PollViewController: UIViewController {
         
         guard let currentVotes = voteResult.answers[answerChoosen] else  { return }
         voteResult.answers.updateValue(currentVotes + 1, forKey: answerChoosen)
-        let logCount = voteLog.logs.count
-        voteLog.logs[logCount - 1].0 = Date()
-        voteLog.logs[logCount - 1].2 = answerChoosen
+        
+        VoteLog.shared.logs.append((Date(), currentUser.name, answerChoosen))
+//        let logCount = voteLog.count
+//        voteLog[logCount - 1].0 = Date()
+//        voteLog[logCount - 1].2 = answerChoosen
        
-        print(voteResult.answers)
-        voteLog.logs.forEach {log in
+//        logList.forEach { log in
+//            print(log)
+//        }
+        
+//        print(voteResult.answers)
+        
+//        logList.forEach {log in
+//            print(log.0, log.1, log.2)
+//        }
+        
+        print("*** VoteLog.shared.logs ****")
+        VoteLog.shared.logs.forEach {log in
             print(log.0, log.1, log.2)
         }
         
         performSegue(withIdentifier: "resultsID", sender: nil)
         
     }
-    
     
     @IBAction func NoButtonTapped() {
         performSegue(withIdentifier: "resultsID", sender: nil)
@@ -116,21 +132,34 @@ extension PollViewController {
             stackView?.isHidden = true
         }
         
-        let sortedVoteLog = voteLog.logs.sorted {
-            $0.0 > $1.0
+//        let sortedVoteLog = VoteLog.shared.logs.sorted {
+//            $0.0 > $1.0
+//        }
+        
+        if VoteLog.shared.logs.isEmpty {
+            showQuestion()
+        } else {
+            VoteLog.shared.logs.forEach {log in
+                print("log => \(log.1) \(currentUser.name) ")
+                
+                if log.1 == currentUser.name {
+                    print("got it")
+                    showVoteAgain()
+                    return
+                }
+            }
+            
+            showQuestion()
+            
+            
         }
         
-        sortedVoteLog.forEach {log in
-            if log.1 == currentUser.name && log.2 != "N/A" {
-                showVoteAgain()
-            } else {
-                showQuestion()
-            }
-        }
+//        showQuestion()
     }
     
     private func showVoteAgain() {
-        questionStack.isHidden = true
+        print("** showVoteAgain **")
+//        questionStack.isHidden = true
         voteAgainStack.isHidden = false
     }
     
