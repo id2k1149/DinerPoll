@@ -14,10 +14,12 @@ class PollViewController: UIViewController {
     @IBOutlet var voteAgainStack: UIStackView!
     
     @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var voteButton: UIButton!
     
     @IBOutlet var dinersLabels: [UILabel]!
     @IBOutlet var menuCollection: [UILabel]!
     @IBOutlet var priceCollection: [UILabel]!
+    @IBOutlet var yesNoCollection: [UIButton]!
     
     @IBOutlet var radioButtons: [UIButton]!
     
@@ -33,6 +35,7 @@ class PollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        voteButton.layer.cornerRadius = 15
         updateUI()
     }
     
@@ -139,6 +142,10 @@ extension PollViewController {
     private func showVoteAgain() {
         questionStack.isHidden = true
         voteAgainStack.isHidden = false
+        
+        yesNoCollection.forEach { button in
+            button.layer.cornerRadius = 15
+        }
     }
     
     private func showQuestions() {

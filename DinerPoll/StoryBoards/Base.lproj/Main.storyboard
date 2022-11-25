@@ -46,11 +46,18 @@
                                     <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="rog-Di-7IG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geI-Pr-WdL">
+                                <rect key="frame" x="68" y="316.5" width="239.5" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forgot name and password?"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BeO-WI-AAT" firstAttribute="top" secondItem="Du4-zJ-Kk4" secondAttribute="bottom" constant="45" id="0Sp-56-18F"/>
+                            <constraint firstItem="geI-Pr-WdL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EXC-fe-Ep5"/>
+                            <constraint firstItem="geI-Pr-WdL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MKM-oD-crL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Du4-zJ-Kk4" secondAttribute="trailing" constant="60" id="Soh-uu-yIx"/>
                             <constraint firstItem="BeO-WI-AAT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p1P-8h-wqN"/>
                             <constraint firstItem="Du4-zJ-Kk4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="pxW-4m-QFs"/>
@@ -66,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="897"/>
+            <point key="canvasLocation" x="1655" y="1046"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nog-WJ-tdH">
@@ -129,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="iui-2y-9Vp">
-                                <rect key="frame" x="127.5" y="290.5" width="120" height="121.5"/>
+                                <rect key="frame" x="127.5" y="270.5" width="120" height="121.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qVk-dG-0wd">
                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="121.5"/>
@@ -180,13 +187,16 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT WINNER IS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-FS-TtM">
-                                <rect key="frame" x="80" y="442" width="215.5" height="26.5"/>
+                                <rect key="frame" x="80" y="422" width="215.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPp-8i-Y9Z">
-                                <rect key="frame" x="162" y="488.5" width="51" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPp-8i-Y9Z">
+                                <rect key="frame" x="12.5" y="468.5" width="350" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="uFA-HT-fGX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -195,7 +205,7 @@
                         <viewLayoutGuide key="safeArea" id="POW-x2-bZW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iui-2y-9Vp" firstAttribute="top" secondItem="MXe-zN-4zP" secondAttribute="bottom" constant="60" id="BfE-dy-hmQ"/>
+                            <constraint firstItem="iui-2y-9Vp" firstAttribute="top" secondItem="MXe-zN-4zP" secondAttribute="bottom" constant="40" id="BfE-dy-hmQ"/>
                             <constraint firstItem="MXe-zN-4zP" firstAttribute="leading" secondItem="POW-x2-bZW" secondAttribute="leading" constant="16" id="DfG-vh-6bd"/>
                             <constraint firstItem="WRk-FS-TtM" firstAttribute="centerX" secondItem="yb6-1M-0PK" secondAttribute="centerX" id="Q40-3g-mb8"/>
                             <constraint firstItem="WRk-FS-TtM" firstAttribute="top" secondItem="iui-2y-9Vp" secondAttribute="bottom" constant="30" id="QrY-uR-wyG"/>
@@ -222,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H53-gX-Vwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2890" y="2002"/>
+            <point key="canvasLocation" x="2593" y="1972"/>
         </scene>
         <!--Diners View Controller-->
         <scene sceneID="oDg-iP-cu3">
@@ -254,7 +264,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uo-FG-30n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3735" y="2015"/>
+            <point key="canvasLocation" x="3337" y="1972"/>
         </scene>
         <!--Poll View Controller-->
         <scene sceneID="8rA-7r-n3k">
@@ -415,8 +425,11 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-Rx-mCI">
                                         <rect key="frame" x="124" y="247" width="95" height="34.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Vote now"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Vote now">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="VoteButtonTaped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="W0E-v1-bDS"/>
                                         </connections>
@@ -447,7 +460,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="YesButtonTapped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="hK5-sY-RCR"/>
+                                                    <action selector="YesButtonTapped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="vyc-Yn-Boc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXd-ag-HM8">
@@ -458,7 +471,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="NoButtonTapped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="tiO-qe-t1s"/>
+                                                    <action selector="NoButtonTapped" destination="5Dz-M0-f0D" eventType="touchUpInside" id="u0j-Tn-cRP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -485,6 +498,7 @@
                         <outlet property="questionLabel" destination="tBi-Zv-Fa5" id="yd1-MN-KMF"/>
                         <outlet property="questionStack" destination="F3s-dj-BGI" id="ZqC-dg-ezM"/>
                         <outlet property="voteAgainStack" destination="eLP-zJ-fW8" id="Jdo-Hr-hv7"/>
+                        <outlet property="voteButton" destination="fEB-Rx-mCI" id="fCT-LF-2KG"/>
                         <outletCollection property="radioButtons" destination="ttP-SL-3zr" collectionClass="NSMutableArray" id="0O7-nZ-5nA"/>
                         <outletCollection property="radioButtons" destination="4bV-RI-UgM" collectionClass="NSMutableArray" id="HFv-U7-Rar"/>
                         <outletCollection property="radioButtons" destination="1Ey-5x-4Ju" collectionClass="NSMutableArray" id="v6o-90-d2d"/>
@@ -497,12 +511,14 @@
                         <outletCollection property="menuCollection" destination="mo0-wR-mhy" collectionClass="NSMutableArray" id="GRe-Yx-zny"/>
                         <outletCollection property="menuCollection" destination="wHg-gW-YUl" collectionClass="NSMutableArray" id="nhL-dE-DFf"/>
                         <outletCollection property="menuCollection" destination="if1-E0-BGV" collectionClass="NSMutableArray" id="hxg-W8-5Nv"/>
+                        <outletCollection property="yesNoCollection" destination="WWW-ho-g3V" collectionClass="NSMutableArray" id="Keh-Md-oSS"/>
+                        <outletCollection property="yesNoCollection" destination="XXd-ag-HM8" collectionClass="NSMutableArray" id="r5K-D7-Dbd"/>
                         <segue destination="hRA-rX-eAh" kind="show" identifier="resultsID" animates="NO" id="EHc-Yr-2T9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m08-TG-VQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1441" y="1973"/>
+            <point key="canvasLocation" x="1654" y="1971"/>
         </scene>
         <!--Logs View Controller-->
         <scene sceneID="suL-aT-9je">
@@ -532,7 +548,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYm-AA-eP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4538" y="2016"/>
+            <point key="canvasLocation" x="4150" y="1972"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

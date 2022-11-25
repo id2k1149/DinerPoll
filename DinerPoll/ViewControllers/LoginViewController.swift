@@ -20,13 +20,12 @@ class LoginViewController: UIViewController {
     private var currentUser: User!
     private var dinersForPoll: [Diner]!
     private var voteResult = VoteResult.shared
-//    private var voteLog = VoteLog.shared
     
     //MARK: override functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.layer.cornerRadius = 10
+        loginButton.layer.cornerRadius = 15
         setInitialData()
     }
     
@@ -40,13 +39,10 @@ class LoginViewController: UIViewController {
             if let dinersVC = viewController as? DinersTableViewController {
                 dinersVC.diners = diners
             } else if let pollVC = viewController as? PollViewController {
-//                let currenLog = (Date(), currentUser.name, "N/A")
-//                voteLog.logs.append(currenLog)
                 pollVC.currentUser = currentUser
                 pollVC.diners = diners
                 pollVC.dinersForPoll = dinersForPoll
                 pollVC.voteResult = voteResult
-//                pollVC.voteLog = voteLog
             } else if let resultsVC = viewController as? ResultsViewController {
                 resultsVC.voteResult = voteResult
             }
@@ -71,6 +67,14 @@ class LoginViewController: UIViewController {
         showAlert(
             title: "Invalid login or password",
             message: "Please, enter correct login and password",
+            textField: passwordTF
+        )
+    }
+    
+    @IBAction func forgotButtonTapped() {
+        showAlert(
+            title: "Please try any of these:",
+            message: "User1 ... User5 with \"pass\"",
             textField: passwordTF
         )
     }

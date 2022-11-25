@@ -40,6 +40,14 @@ extension ResultsViewController {
             label.text = "\(votes)"
         }
         
+        if voteResult.winner != "No winner" {
+            winnerLabel.backgroundColor = .systemBlue
+            winnerLabel.font = winnerLabel.font.withSize(40)
+            winnerLabel.layer.masksToBounds = true
+            winnerLabel.layer.cornerRadius = 15
+            winnerLabel.sizeToFit()
+            winnerLabel.textColor = .white
+        }
         winnerLabel.text = voteResult.winner
         
     }

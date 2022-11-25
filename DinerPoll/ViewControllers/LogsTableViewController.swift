@@ -8,13 +8,6 @@
 import UIKit
 
 class LogsTableViewController: UITableViewController {
-    
-//    var logsList = VoteLog.shared.logs
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +22,6 @@ class LogsTableViewController: UITableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-YYYY HH:mm"
         let dateString = dateFormatter.string(from: log.0)
-
 
         content.text = "\(dateString) \(log.1) \"\(log.2)\""
         cell.contentConfiguration = content
