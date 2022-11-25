@@ -5,7 +5,7 @@
 //  Created by Max Franz Immelmann on 11/21/22.
 //
 
-class Question {
+final class Question {
     let title: String
     let answers: [Diner]
     

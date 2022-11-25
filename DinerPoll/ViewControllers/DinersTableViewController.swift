@@ -9,6 +9,7 @@ import UIKit
 
 class DinersTableViewController: UITableViewController {
     
+    // MARK: var
     var diners: [Diner]!
     
     // MARK: - Table view data source
@@ -35,7 +36,6 @@ class DinersTableViewController: UITableViewController {
         }
 
         cell.contentConfiguration = content
-
         return cell
     }
 }

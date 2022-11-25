@@ -5,10 +5,8 @@
 //  Created by Max Franz Immelmann on 11/23/22.
 //
 
-import Foundation
-
 // Singleton
-class VoteResult {
+final class VoteResult {
     static var shared = VoteResult()
     
     var answers = [String : Int]()

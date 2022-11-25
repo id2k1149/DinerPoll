@@ -103,7 +103,5 @@ extension LoginViewController {
         dinersForPoll.forEach { diner in
             voteResult.answers.updateValue(0, forKey: diner.name)
         }
-        
     }
-    
 }

@@ -21,10 +21,8 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.hidesBackButton = true
         updateUI()
     }
-
 }
 
 // MARK: - Private Methods
@@ -49,6 +47,5 @@ extension ResultsViewController {
             winnerLabel.textColor = .white
         }
         winnerLabel.text = voteResult.winner
-        
     }
 }

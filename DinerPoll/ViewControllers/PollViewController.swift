@@ -26,6 +26,7 @@ class PollViewController: UIViewController {
     // MARK: privates
     private var answerChoosen: String!
     
+    // MARK: vars
     var diners: [Diner]!
     var dinersForPoll: [Diner]!
     var currentUser: User!
@@ -109,7 +110,6 @@ class PollViewController: UIViewController {
         voteResult.answers.updateValue(currentVotes - 1, forKey: userLastAnswer)
         showQuestions()
     }
-    
 }
 
 // MARK: - Private Methods
@@ -174,7 +174,6 @@ extension PollViewController {
             }
             label.text = price
         }
-        
     }
     
     private func showAlert(title: String, message: String) {

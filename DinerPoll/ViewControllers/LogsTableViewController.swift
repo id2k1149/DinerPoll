@@ -27,5 +27,4 @@ class LogsTableViewController: UITableViewController {
         cell.contentConfiguration = content
         return cell
     }
-
 }
