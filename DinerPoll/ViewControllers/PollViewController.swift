@@ -70,7 +70,7 @@ class PollViewController: UIViewController {
         
         guard let buttonIndex = radioButtons.firstIndex(of: sender) else { return }
         answerChoosen = dinersForPoll[buttonIndex].name
-        guard let circleFill = UIImage(systemName: "circle.fill") else { return }
+        guard let circleFill = UIImage(systemName: "checkmark.circle.fill") else { return }
         sender.setImage(circleFill, for: .normal)
     }
     
