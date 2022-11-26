@@ -17,6 +17,13 @@ final class User {
 
 extension User {
     static func getUsers() -> [User] {
-        DataStore.shared.users
+
+        var users = [User]()
+        
+        for index in 1...5 {
+            users.append(User(name: "User\(index)", password: "pass"))
+        }
+        
+        return users
     }
 }
