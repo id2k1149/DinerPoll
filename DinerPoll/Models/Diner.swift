@@ -18,8 +18,35 @@ final class Diner {
 }
 
 extension Diner {
+    
     static func getDiners() -> [Diner] {
-        DataStore.shared.diners
+        var diners = [Diner]()
+        
+        let dinersNames = DataStore.shared.dinersNames
+        var randomDiners = dinersNames.shuffled()
+        
+        let dishes = DataStore.shared.dishes
+        
+        for _ in 1...9 {
+            
+            let dinerName = "\(randomDiners[0])"
+            randomDiners.removeFirst()
+            
+            var dishList = [String : String]()
+            let menuLength = Int.random(in: 2...4)
+            var randomDishes = dishes.shuffled()
+            
+            for _ in 1...menuLength {
+                let dishName = "\(randomDishes[0])"
+                randomDishes.removeFirst()
+                let dishPrice = "$\(Int.random(in: 1...20)).00"
+                dishList.updateValue(dishPrice, forKey: dishName)
+            }
+            
+            let diner = Diner(name: dinerName, menu: dishList)
+            diners.append(diner)
+        }
+        return diners
     }
     
     static func sortDiners(for diners: [Diner]) -> [Diner] {
@@ -59,5 +86,4 @@ extension Diner {
         
         return result
     }
-    
 }
